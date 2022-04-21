@@ -16,3 +16,10 @@ Ketua : KETUA YAYASAN TRIYONO, S.E.
 1. Muhammad Zayyan Dafa
 2. Farhan Ardiyanto
 3. Hauzan MUhfid
+
+
+## Feature
+1. Home Page
+1. Event
+1. About Us
+1. Pendaftaran
