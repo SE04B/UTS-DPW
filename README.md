@@ -35,6 +35,3 @@ Ketua : KETUA YAYASAN TRIYONO, S.E.
 4. Pendaftaran
 
 5. About Us
-
-
-## Scenario
