@@ -18,12 +18,20 @@ Ketua : KETUA YAYASAN TRIYONO, S.E.
 3. Hauzan MUhfid
 
 
-## Feature Website
+## Feature
 1. Home Page
-1. Event
-1. About Us
-1. Pendaftaran
+    * Nama
+    * Logo
+    * Slogan
+    * Gambar ponpes sebagai background
+2. Fasilitas
+    * Nama
+    * Gambar
+    * Deskripsi
+3. Event
+    * Upcoming event
+    * Today's event
+    * Ended event
+4. Pendaftaran
 
-## Struktur Warna
-1. Hijau 
-eb
+5. About Us
