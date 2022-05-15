@@ -1,9 +1,9 @@
 <p align="center">
-    <img src="img/LogoPonpes_remove.png" width="400" max-width="90%" alt="OurRooms" />
+    <img src="img/LogoPonpes_remove.png" width="200" max-width="90%" alt="OurRooms" />
 </p>
 
 <p align="center">
-    <img src="https://https://api.netlify.com/api/v1/badges/fbfd05ff-08ed-497f-89b6-50cb6911d295/deploy-status" />
+    <img src="https://api.netlify.com/api/v1/badges/fbfd05ff-08ed-497f-89b6-50cb6911d295/deploy-status" />
     <img src="https://img.shields.io/badge/Bootstrap-5.2.0-blue.svg" />
     <img src="https://img.shields.io/badge/MDBootstrap-4.0.0-blue.svg" />
 </p>
