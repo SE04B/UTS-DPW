@@ -1,3 +1,16 @@
+<p align="center">
+    <img src="img/Logo.png" width="400" max-width="90%" alt="OurRooms" />
+</p>
+
+<p align="center">
+    <img src="https://app.netlify.com/sites/pesantrennuruljadid/deploys" />
+    <img src="https://img.shields.io/badge/Bootstrap-5.2.0-blue.svg" />
+    <img src="https://img.shields.io/badge/MDBootstrap-4.0.0-blue.svg" />
+</p>
+
+Pesantren Nurul Jadid Al - Mas’udiyah merupakan pondok untuk mempelajari ilmu agama Islam. Terletak di Sokaraja, Purwokerto Timur. 
+Selain untuk menampilkan profile pesantren, website yang kami buat ini nantinya juga akan ada form sebagai sarana untuk pendaftaran santri baru.
+
 # Target 
 Pondok Pesantren Nurul Jadid Al - Mas'udiyah
 
