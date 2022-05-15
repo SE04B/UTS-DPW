@@ -17,7 +17,6 @@ Ketua : KETUA YAYASAN TRIYONO, S.E.
 2. Farhan Ardiyanto
 3. Hauzan MUhfid
 
-
 ## Feature
 1. Home Page
     * Nama
