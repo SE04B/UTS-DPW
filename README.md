@@ -37,13 +37,6 @@ Ketua : KETUA YAYASAN TRIYONO, S.E.
     * Slogan
     * Gambar ponpes sebagai background
 2. Fasilitas
-    * Nama
-    * Gambar
-    * Deskripsi
 3. Event
-    * Upcoming event
-    * Today's event
-    * Ended event
 4. Pendaftaran
-
 5. About Us
