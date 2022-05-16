@@ -6,34 +6,40 @@
     <img src="https://api.netlify.com/api/v1/badges/fbfd05ff-08ed-497f-89b6-50cb6911d295/deploy-status" />
     <img src="https://img.shields.io/badge/Bootstrap-5.2.0-blue.svg" />
     <img src="https://img.shields.io/badge/MDBootstrap-4.0.0-blue.svg" />
+    <img src="https://img.shields.io/badge/Platform-Website-brightgreen.svg?style=flat" />
 </p>
 
-Pesantren Nurul Jadid Al - Mas’udiyah merupakan pondok untuk mempelajari ilmu agama Islam. Terletak di Sokaraja, Purwokerto Timur. 
-Selain untuk menampilkan profile pesantren, website yang kami buat ini nantinya juga akan ada form sebagai sarana untuk pendaftaran santri baru.
+Saat ini, setiap instansi sudah pasti memiliki website pribadi sebagai Company Profile mereka. Kami berinisiatif untuk membuatkan sebuah website Company Profile untuk instansi yang masih belum memiliki website tersebut. Setelah berdiskusi, kami sepakat untuk membuatkan website untuk sebuah pesantren dimana salah satu dari anggota kami belajar di pesantren tersebut. 
 
-# Link Desain
-https://www.figma.com/file/3mUWK9fsYdjRMY7hbGG0hr/Pondok-Pesantren?node-id=47%3A7
+Pesantren Nurul Jadid Al - Mas’udiyah merupakan pondok untuk mempelajari ilmu agama Islam. Terletak di Sokaraja, Purwokerto Timur. 
+
+Selain untuk menampilkan profile pesantren, website yang kami buat ini nantinya juga akan ada form sebagai sarana untuk pendaftaran santri baru.
 
 # Target 
 Pondok Pesantren Nurul Jadid Al - Mas'udiyah
 
 # Penanggung Jawab
-Pengasuh pondok : USTADZ MOH. UMAR SA'I
+Pengasuh pondok: USTADZ MOH. UMAR SA'I
 
-Ketua : KETUA YAYASAN TRIYONO, S.E.
+Ketua: KETUA YAYASAN TRIYONO, S.E.
+
+# Link
+Desain: https://www.figma.com/file/3mUWK9fsYdjRMY7hbGG0hr/Pondok-Pesantren?node-id=47%3A7
+Hosting dengan Netlify: pesantrennuruljadid.netlify.app
+Hosting dengan GitHub Pages: https://se04b.github.io/UTS-DPW-K5/
 
 # Pembagian Tugas
-## Coding Website
+### Coding Website
 1. Muhammad Irfani
 2. Maulana Dimyati
-3. Nazar Alwi
+3. Muhammad Nazar Alwi
 
-## Wireframe dan penentuan UI
+### Wireframe dan Penentuan UI
 1. Muhammad Zayyan Dafa Qiyamulail
 2. Farhan Ardiyanto Wibowo
 3. Muhammad Hauzan Mufid
 
-## Feature
+### Feature
 1. Home Page
     * Nama
     * Logo
