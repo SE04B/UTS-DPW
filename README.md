@@ -24,8 +24,8 @@ Pengasuh pondok: USTADZ MOH. UMAR SA'I
 Ketua: KETUA YAYASAN TRIYONO, S.E.
 
 # Link
-Desain: https://www.figma.com/file/3mUWK9fsYdjRMY7hbGG0hr/Pondok-Pesantren?node-id=47%3A7
-Hosting dengan Netlify: pesantrennuruljadid.netlify.app
+Desain: https://www.figma.com/file/3mUWK9fsYdjRMY7hbGG0hr/Pondok-Pesantren?node-id=47%3A7 <br>
+Hosting dengan Netlify:  https://pesantrennuruljadid.netlify.app <br>
 Hosting dengan GitHub Pages: https://se04b.github.io/UTS-DPW-K5/
 
 # Pembagian Tugas
