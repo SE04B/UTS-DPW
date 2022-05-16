@@ -4,9 +4,9 @@
 
 <p align="center">
     <img src="https://api.netlify.com/api/v1/badges/fbfd05ff-08ed-497f-89b6-50cb6911d295/deploy-status" />
-    <img src="https://img.shields.io/badge/Bootstrap-5.2.0-blue.svg" />
-    <img src="https://img.shields.io/badge/MDBootstrap-4.0.0-blue.svg" />
-    <img src="https://img.shields.io/badge/Platform-Website-brightgreen.svg?style=flat" />
+    <img src="https://img.shields.io/badge/Bootstrap-5.2.0-green.svg" />
+    <img src="https://img.shields.io/badge/MDBootstrap-4.0.0-green.svg" />
+    <img src="https://img.shields.io/badge/Platform-Website-green.svg?style=flat" />
 </p>
 
 Saat ini, setiap instansi sudah pasti memiliki website pribadi sebagai Company Profile mereka. Kami berinisiatif untuk membuatkan sebuah website Company Profile untuk instansi yang masih belum memiliki website tersebut. Setelah berdiskusi, kami sepakat untuk membuatkan website untuk sebuah pesantren dimana salah satu dari anggota kami belajar di pesantren tersebut. 
