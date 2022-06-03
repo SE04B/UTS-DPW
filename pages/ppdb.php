@@ -1,3 +1,25 @@
+<?php
+include('../admin/Include/Sessions.php');
+include('../admin/Include/functions.php');
+if ( isset($_POST['submit'])) {
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	if(empty($username) || empty($password)) {
+		$_SESSION['errorMessage'] = 'All Fields Must Be Fill Out';
+	}else {
+		$foundAccount = LoginAttempt($username, $password);
+		if ($foundAccount) {
+			$_SESSION['successMessage'] = 'Login Successfully Welcome ' . $foundAccount['username'];
+			$_SESSION['user_id'] = $foundAccount['id'];
+			$_SESSION['username'] = $foundAccount['username'];
+			Redirect_To('../admin/Dashboard.php');
+		}else {
+			$_SESSION['errorMessage'] = 'Username/Password Is Invalid';
+		}
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,8 +83,8 @@
                                     </button>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../admin/Login.php">
+                        <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modalForm">
+                            <a>
                                 <button type="button" class="btn btn-primary btn-rounded">
                                         Login
                                     </button>
@@ -73,6 +95,36 @@
             </div>
         </nav>
     </header>
+
+    <!-- Modal -->
+    <form action="../index.php" method="post">
+            <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Bootstrap 5 Modal Form</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                                </div>
+                                <div class="modal-footer d-block">
+                                    <button type="submit" id="submit" name="submit" class="btn btn-warning float-end">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Modal -->
 
     <section>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScn-IR1zWlSah7BHELl8nZDZ5okvYSm0tRU0CTDU5O3x_DR5Q/viewform?embedded=true" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

@@ -3,6 +3,6 @@
 <?php
 $_SESSION['user_id'] = null;
 session_destroy();
-Redirect_To('Login.php');
+Redirect_To('../index.php');
 
 ?>
