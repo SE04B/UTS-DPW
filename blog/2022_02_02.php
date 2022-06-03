@@ -22,7 +22,7 @@
     <header style="margin: 2cm;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="../index.html">
+                <a class="navbar-brand" href="../index.php">
                     <img src="../img/LogoPonpes_remove.png" height="30" alt="Pondok Pesantren Nurul Jadid Al - Mas'udiyah" loading="lazy" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,28 +32,28 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="../index.html">
+                            <a href="../index.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         Dashboard
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/ppdb.html">
+                            <a href="../pages/ppdb.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         PPDB
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/event.html">
+                            <a href="../pages/event.php">
                                 <button type="button" class="btn btn-success btn-rounded">
                                         Berita
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/aboutus.html">
+                            <a href="../pages/aboutus.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         Tentang Kami
                                     </button>
@@ -98,10 +98,10 @@
 
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="../index.html " class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="../pages/ppdb.html " class="nav-link px-2 text-muted">PPDB</a></li>
-            <li class="nav-item"><a href="../pages/event.html " class="nav-link px-2 text-muted">Berita</a></li>
-            <li class="nav-item"><a href="../pages/aboutus.html " class="nav-link px-2 text-muted">Tentang Kami</a></li>
+            <li class="nav-item"><a href="../index.php " class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="../pages/ppdb.php " class="nav-link px-2 text-muted">PPDB</a></li>
+            <li class="nav-item"><a href="../pages/event.php " class="nav-link px-2 text-muted">Berita</a></li>
+            <li class="nav-item"><a href="../pages/aboutus.php " class="nav-link px-2 text-muted">Tentang Kami</a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Pondok Pesantren Nurul Jadid Al - Mas'udiyah</p>
     </footer>
