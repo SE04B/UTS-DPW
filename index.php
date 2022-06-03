@@ -21,7 +21,7 @@
     <header style="margin: 2cm;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="img/LogoPonpes_remove.png" height="30" alt="Pondok Pesantren Nurul Jadid Al - Mas'udiyah" loading="lazy" />
                 </a>
                 <!-- Responsive Header -->
@@ -32,30 +32,37 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <button type="button" class="btn btn-success btn-rounded">
                                         Dashboard
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/ppdb.html">
+                            <a href="pages/ppdb.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         PPDB
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/event.html">
+                            <a href="pages/event.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         Berita
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/aboutus.html">
+                            <a href="pages/aboutus.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         Tentang Kami
+                                    </button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="admin/Login.php">
+                                <button type="button" class="btn btn-primary btn-rounded">
+                                        Login
                                     </button>
                             </a>
                         </li>
@@ -83,8 +90,8 @@
                                     <span class="text-success">Nurul Jadid Al - Mas'udiyah</span>
                                     <p><cite style="font-style: italic; font-size: 20px;">"Pribadi saleh, mandiri, berilmu, berjuang dan berbakti kepada agama, masyarakat dan bangsa"</cite></p>
                                 </h1>
-                                <a class="btn btn-success btn-lg py-3 px-5 mb-2 me-2" href="pages/ppdb.html" role="button" aria-controls="#picker-editor" draggable="false">Info PPDB</a>
-                                <a class="btn btn-link btn-lg py-3 px-5 text-danger mb-2 me-2" data-ripple-color="danger" href="#berita1" role="button" aria-controls="#picker-editor" draggable="false">Baca selengkapnya</a>
+                                <a class="btn btn-success btn-lg py-3 px-5 mb-2 me-2" href="pages/ppdb.php" role="button" aria-controls="#picker-editor" draggable="false">Info PPDB</a>
+                                <!-- <a class="btn btn-link btn-lg py-3 px-5 text-danger mb-2 me-2" data-ripple-color="danger" href="#berita1" role="button" aria-controls="#picker-editor" draggable="false">Baca selengkapnya</a> -->
                             </div>
                             <!-- Card Qoute -->
                         </div>
@@ -109,7 +116,7 @@
                                 <p class="text-muted">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quae nulla saepe rerum aspernatur odio amet perferendis tempora mollitia? Ratione unde magni omnis quaerat blanditiis cumque dolore placeat rem dignissimos?
                                 </p>
-                                <a class="btn btn-primary" href="blog/2022_02_02.html" role="button" aria-controls="#picker-editor" draggable="false">Read more</a>
+                                <a class="btn btn-primary" href="blog/2022_02_02.php" role="button" aria-controls="#picker-editor" draggable="false">Read more</a>
                             </div>
                         </div>
                         <div class="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
@@ -271,10 +278,10 @@
 
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="pages/ppdb.html" class="nav-link px-2 text-muted">PPDB</a></li>
-            <li class="nav-item"><a href="pages/event.html" class="nav-link px-2 text-muted">Berita</a></li>
-            <li class="nav-item"><a href="pages/aboutus.html" class="nav-link px-2 text-muted">Tentang Kami</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="pages/ppdb.php" class="nav-link px-2 text-muted">PPDB</a></li>
+            <li class="nav-item"><a href="pages/event.php" class="nav-link px-2 text-muted">Berita</a></li>
+            <li class="nav-item"><a href="pages/aboutus.php" class="nav-link px-2 text-muted">Tentang Kami</a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Pondok Pesantren Nurul Jadid Al - Mas'udiyah</p>
     </footer>
