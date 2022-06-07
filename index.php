@@ -106,7 +106,7 @@ if ( isset($_POST['submit'])) {
                             <form>
                                 <div class="mb-3">
                                     <label class="form-label">Email Address</label>
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Email" />
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>

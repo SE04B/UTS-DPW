@@ -42,7 +42,7 @@ if ( isset($_POST['submit'])) {
     <header style="margin: 2cm;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../index.php">
                     <img src="../img/LogoPonpes_remove.png" height="30" alt="Pondok Pesantren Nurul Jadid Al - Mas'udiyah" loading="lazy" />
                 </a>
                 <!-- Responsive Header -->
@@ -106,7 +106,7 @@ if ( isset($_POST['submit'])) {
                             <form>
                                 <div class="mb-3">
                                     <label class="form-label">Email Address</label>
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Email" />
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>

@@ -43,7 +43,7 @@ if ( isset($_POST['submit'])) {
 <header style="margin: 2cm;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../index.php">
                     <img src="../img/LogoPonpes_remove.png" height="30" alt="Pondok Pesantren Nurul Jadid Al - Mas'udiyah" loading="lazy" />
                 </a>
                 <!-- Responsive Header -->
@@ -107,7 +107,7 @@ if ( isset($_POST['submit'])) {
                             <form>
                                 <div class="mb-3">
                                     <label class="form-label">Email Address</label>
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Email" />
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>
@@ -226,14 +226,14 @@ if ( isset($_POST['submit'])) {
     <!-- Akhir fasilitas -->
 
     <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="../index.php" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="ppdb.php" class="nav-link px-2 text-muted">PPDB</a></li>
-            <li class="nav-item"><a href="blog.php" class="nav-link px-2 text-muted">Berita</a></li>
-            <li class="nav-item"><a href="aboutus.php" class="nav-link px-2 text-muted">Tentang Kami</a></li>
-        </ul>
-        <p class="text-center text-muted">© 2022 Pondok Pesantren Nurul Jadid Al - Mas'udiyah</p>
-    </footer>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="pages/ppdb.php" class="nav-link px-2 text-muted">PPDB</a></li>
+                <li class="nav-item"><a href="pages/blog.php" class="nav-link px-2 text-muted">Berita</a></li>
+                <li class="nav-item"><a href="aboutus.php" class="nav-link px-2 text-muted">Tentang Kami</a></li>
+            </ul>
+            <p class="text-center text-muted">© 2022 Pondok Pesantren Nurul Jadid Al - Mas'udiyah</p>
+        </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

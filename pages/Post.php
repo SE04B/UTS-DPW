@@ -140,19 +140,24 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootdey">
 <div class="col-md-12 bootstrap snippets">
-<div class="panel">
+<div class="panel form-group">
   <div class="panel-body">
 	<input type="email" name="email" placeholder="Your Email Address" class="form-control" required>
     <br>
-    <textarea class="form-control" rows="2" name="comment" placeholder="What are you thinking?"></textarea>
+    <div>
+    <textarea class="form-control" rows="2" name="comment" placeholder="What are you thinking?" required></textarea>
+    </div>
+    
     <div class="mar-top clearfix">
-      <button name="id" class="btn btn-sm btn-primary pull-right" value="<?php echo $_GET['id'] ?>" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
+      <input name="submit" class="btn btn-sm btn-primary pull-right" value="Send Comment" type="submit"></input>
   </div>
+      <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"></input>
+    </form>
   <hr>
 </div>
 <div class="page-header">Comments</div>
 <?php
-					$sql = "SELECT * FROM comment WHERE post_id = '$_GET[id]'";
+					$sql = "SELECT * FROM comment WHERE post_id = '$_GET[id]' AND status = 'approved'";
 					$exec = Query($sql);
 					if (mysqli_num_rows($exec) > 0) {
 						while ($comments = mysqli_fetch_assoc($exec)) {

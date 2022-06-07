@@ -34,7 +34,7 @@
 					<li><a href="Comments.php">
 					<i class="fa-solid fa-comments"></i>
 					&nbsp;Comments</a></li>
-					<li><a href="Blog.php">
+					<li><a href="../pages/blog.php">
 					<i class="fa-regular fa-window-restore"></i>
 					&nbsp;Live Blog</a></li>
 					<li><a href="Lagout.php">
@@ -96,7 +96,7 @@
 									<td><?php echo "<img class='img-responsive' src='../pages/Upload/Image/$image' width='100px' height='150px'>"; ?></td>
 									<td><?php echo 'Ongoing'; ?></td>
 									<td><?php echo "<a href='editpost.php?post_id=$post_id'>Edit</a> | <a href='deletepost.php?delete_post_id=$post_id'>Delete</a>"; ?></td>
-									<td><a href="Post.php?id=<?php echo $post_id; ?>"><button class="btn btn-primary">Live Preview</button></a></td>
+									<td><a href="../pages/Post.php?id=<?php echo $post_id; ?>"><button class="btn btn-primary">Live Preview</button></a></td>
 									</tr>
 									<?php
 									$postNo++;
