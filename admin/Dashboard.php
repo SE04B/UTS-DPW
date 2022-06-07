@@ -7,39 +7,38 @@
 	<title>Dashboard</title>
 	<script src="../js/jquery-3.2.1.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bootstrap/css/login.css">
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/adminDashboard.css">
+	<link rel="stylesheet" href="../css/login.css">
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/dd822cdcdc.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="heading">
-	<a href=""><p>Visit Blog</p></a>
-</div>
+	<Header style="margin: 1cm;"></Header>
 <div class="container-fluid">
 	<div class="main" id="dashboard">
 		<div class="row">
 			<div class="col-sm-2">
 				<ul id="side-menu" class="nav nav-pills nav-stacked">
 					<li class="active"><a href="Dashboard.php">
-					<span = class="glyphicon glyphicon-th"></span>
+					<i class="fa-solid fa-house-user"></i>
 					 &nbsp;Dashboard</a></li>
 					<li><a href="NewPost.php">
-					<span = class="glyphicon glyphicon-list"></span>
+					<i class="fa-solid fa-newspaper"></i>
 					&nbsp;New Post</a></li>
 					<li><a href="Categories.php">
-					<span = class="glyphicon glyphicon-tags"></span>
+					<i class="fa-solid fa-book-atlas"></i>
 					&nbsp;Categories</a></li>
 					<li><a href="Admin.php">
-					<span = class="glyphicon glyphicon-user"></span>
+					<i class="fa-solid fa-lock"></i>
 					&nbsp;Manage Admin</a></li>
 					<li><a href="Comments.php">
-					<span = class="glyphicon glyphicon-comment"></span>
+					<i class="fa-solid fa-comments"></i>
 					&nbsp;Comments</a></li>
 					<li><a href="Blog.php">
-					<span = class="glyphicon glyphicon-equalizer"></span>
+					<i class="fa-regular fa-window-restore"></i>
 					&nbsp;Live Blog</a></li>
 					<li><a href="Lagout.php">
-					<span = class="glyphicon glyphicon-log-out"></span>
+					<i class="fa-solid fa-right-from-bracket"></i>
 					&nbsp;Lagout</a></li>
 				</ul>
 			</div>
@@ -94,7 +93,7 @@
 									?></td>
 									<td><?php echo $author; ?></td>
 									<td><?php echo $category; ?></td>
-									<td><?php echo "<img class='img-responsive' src='Upload/Image/$image' width='100px' height='150px'>"; ?></td>
+									<td><?php echo "<img class='img-responsive' src='../pages/Upload/Image/$image' width='100px' height='150px'>"; ?></td>
 									<td><?php echo 'Ongoing'; ?></td>
 									<td><?php echo "<a href='editpost.php?post_id=$post_id'>Edit</a> | <a href='deletepost.php?delete_post_id=$post_id'>Delete</a>"; ?></td>
 									<td><a href="Post.php?id=<?php echo $post_id; ?>"><button class="btn btn-primary">Live Preview</button></a></td>

@@ -1,3 +1,17 @@
+<?php require_once('../admin/Include/Sessions.php'); ?>
+<?php require_once('../admin/Include/functions.php') ?>
+<?php 
+	if ( isset($_GET['id']) ) {
+		$post_id = $_GET['id'];
+		$post_title = "";
+		$sql = "SELECT * FROM cms_post WHERE post_id = '$post_id'";
+		$exec = Query($sql);
+		if ($title = mysqli_fetch_assoc($exec)) {
+			$post_title = $title['title'];
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +27,10 @@
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/mdb.min.css" />
+    <link rel="stylesheet" href="../css/commentSection.css">
 </head>
 
 <body>
@@ -73,28 +89,98 @@
                 <!---->
                 <section draggable="false" class="container pt-5" data-v-271253ee="">
                     <section class="mb-10">
-                        <div class="p-5 text-center shadow-5-strong rounded" style="margin-bottom: 2cm; background-image: url('../img/event/event_Akhirussanah_1.jpeg'); height: 500px; background-size: cover; background-position: 50% 50%; background-color: rgba(0, 0, 0, 0);"
+                    <?php echo SuccessMessage(); ?>
+				<?php echo Message(); ?>
+				<?php
+					if( isset($_GET['id'])) {
+						$query = "SELECT * FROM cms_post WHERE post_id = '$_GET[id]'";
+						$exec = Query($query);
+						if (mysqli_num_rows($exec) > 0) {
+							while ($post = mysqli_fetch_assoc($exec) ) {
+								$post_id = $post['post_id'];
+								$post_date = $post['post_date_time'];
+								$post_title = $post['title'];
+								$post_category = $post['category'];
+								$post_author = $post['author'];
+								$post_image = $post['image'];
+								$post_content = $post['post']; 
+							?>
+							<div class="post">
+                            <div class="p-5 text-center shadow-5-strong rounded" style="margin-bottom: 2cm; background-image: url('Upload/Image/<?php echo $post_image?>'); height: 500px; background-size: cover; background-position: 50% 50%; background-color: rgba(0, 0, 0, 0);"
                             aria-controls="#picker-editor">
                         </div>
                         <!-- <img src="../img/event_Akhirussanah_1.jpeg" width="200px" class=" align-items-lg-center shadow-5-strong rounded-5 mb-4" alt="" aria-controls="#picker-editor" /> -->
                         <div class="row align-items-center mb-4">
                             <div class="col-lg-7">
                                 <img src="../img/event/event_Akhirussanah_1.jpeg" class="rounded-circle me-2" alt="" loading="lazy" aria-controls="#picker-editor" height="35" width="35" />
-                                <span> Published <u>5.05.2022</u> by</span> <a href="undefined" class="text-dark" aria-controls="#picker-editor">Muhammad Irfani</a>
+                                <span> Published <u><?php echo htmlentities($post_date) ?></u> by</span> <a href="undefined" class="text-dark" aria-controls="#picker-editor"><?php echo htmlentities($post_author) ?></a>
                             </div>
                         </div>
-                        <h1 class="fw-bold mb-4">Peserta Juara Lomba Membaca Al-Qur'an</h1>
+                        <h1 class="fw-bold mb-4"><?php echo htmlentities($post_title)?></h1>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi harum tempore cupiditate asperiores provident, itaque, quo ex iusto rerum voluptatum delectus corporis quisquam maxime a ipsam nisi sapiente qui optio! Dignissimos harum quod culpa officiis
-                            suscipit soluta labore! Expedita quas, nesciunt similique autem, sunt, doloribus pariatur maxime qui sint id enim. Placeat, maxime labore. Dolores ex provident ipsa impedit, omnis magni earum. Sed fuga ex ducimus consequatur
-                            corporis, architecto nesciunt vitae ipsum consequuntur perspiciatis nulla esse voluptatem quos dolorum delectus similique eum vero in est velit quasi pariatur blanditiis incidunt quam.
+                        <?php echo htmlentities($post_content) ?>
                         </p>
+							</div>
+							<?php
+							}
+						}
+					}else {
+						Redirect_To('../pages/blog.php');
+					}
+				?>
                     </section>
                 </section>
                 <!---->
             </div>
         </div>
     </div>
+
+    <!-- Comment -->
+    <form action="../admin/comment.php?>'" method="POST">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootdey">
+<div class="col-md-12 bootstrap snippets">
+<div class="panel">
+  <div class="panel-body">
+	<input type="email" name="email" placeholder="Your Email Address" class="form-control" required>
+    <br>
+    <textarea class="form-control" rows="2" name="comment" placeholder="What are you thinking?"></textarea>
+    <div class="mar-top clearfix">
+      <button name="id" class="btn btn-sm btn-primary pull-right" value="<?php echo $_GET['id'] ?>" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
+  </div>
+  <hr>
+</div>
+<div class="page-header">Comments</div>
+<?php
+					$sql = "SELECT * FROM comment WHERE post_id = '$_GET[id]'";
+					$exec = Query($sql);
+					if (mysqli_num_rows($exec) > 0) {
+						while ($comments = mysqli_fetch_assoc($exec)) {
+							$c_email = $comments['email'];
+							$c_dateTime = $comments['date_time'];
+							$c_comment = $comments['comment'];
+							?>
+							
+							<div class="comment-block" style="margin-bottom: 20px; ">
+								<div class="row">
+									<div class="col-sm-2" style="height: 70px;width: 100px; padding:0; margin:0;">
+									<img src="Assets/Images/user-default.png" height="70px" width="100px">
+									</div>
+									<div class="col-sm-10">
+										<div><span class="lead text-info"><?php echo $c_email; ?></span></div>
+										<div><span><?php echo $c_dateTime; ?></span></div>
+										<div><span class="lead"> Say: <?php echo $c_comment; ?></span></div>
+									</div>
+								</div>
+							</div>
+
+							<?php
+						}
+					}else {
+							echo "No Comments Yet";
+						}
+				?>
+    <!-- Comment -->
 
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">

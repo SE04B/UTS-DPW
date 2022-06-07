@@ -46,7 +46,7 @@ if ( isset($_POST['submit'])) {
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="img/LogoPonpes_remove.png" height="30" alt="Pondok Pesantren Nurul Jadid Al - Mas'udiyah" loading="lazy" />
+                    <img src="../img/LogoPonpes_remove.png" height="30" alt="Pondok Pesantren Nurul Jadid Al - Mas'udiyah" loading="lazy" />
                 </a>
                 <!-- Responsive Header -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@ if ( isset($_POST['submit'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="event.php">
+                            <a href="blog.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         Berita
                                     </button>
@@ -102,7 +102,7 @@ if ( isset($_POST['submit'])) {
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Bootstrap 5 Modal Form</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -136,7 +136,7 @@ if ( isset($_POST['submit'])) {
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="../index.php" class="nav-link px-2 text-muted">Home</a></li>
             <li class="nav-item"><a href="ppdb.php" class="nav-link px-2 text-muted">PPDB</a></li>
-            <li class="nav-item"><a href="event.php" class="nav-link px-2 text-muted">Berita</a></li>
+            <li class="nav-item"><a href="blog.php" class="nav-link px-2 text-muted">Berita</a></li>
             <li class="nav-item"><a href="aboutus.php" class="nav-link px-2 text-muted">Tentang Kami</a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Pondok Pesantren Nurul Jadid Al - Mas'udiyah</p>

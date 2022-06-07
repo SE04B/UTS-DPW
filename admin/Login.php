@@ -22,7 +22,7 @@ if ( isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>How To Create Bootstrap 5 Modal Form Example</title>
+        <title>How To Create Login Example</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
@@ -40,7 +40,7 @@ if ( isset($_POST['submit'])) {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Bootstrap 5 Modal Form</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

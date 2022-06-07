@@ -1,5 +1,5 @@
-<?php require_once('Include/Sessions.php'); ?>
-<?php require_once('Include/functions.php') ?>
+<?php require_once('../admin/Include/Sessions.php'); ?>
+<?php require_once('../admin/Include/functions.php') ?>
 <?php ConfirmLogin(); ?>
 <?php
 
@@ -14,7 +14,7 @@ if ( isset( $_POST['post-submit'])) {
 	$dateTime = strftime('%Y-%m-%d',$time);
 	$title_length = strlen($title);
 	$content_lenght = strlen($content);
-	$imageDirectory = "../pages/Upload/Image/" . basename($_FILES['post-image']['name']);
+	$imageDirectory = "Upload/Image/" . basename($_FILES['post-image']['name']);
 	if ( empty($title)) {
 		$_SESSION['errorMessage'] = "Title Is Emtpy";
 		Redirect_To('NewPost.php');
@@ -46,12 +46,11 @@ if ( isset( $_POST['post-submit'])) {
 <html>
 <head>
 	<title>New Post</title>
-	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="jquery-3.2.1.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../css/adminDashboard.css">
 	<link rel="stylesheet" href="../css/login.css">
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<script src="https://kit.fontawesome.com/dd822cdcdc.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <Header style="margin: 1cm;"></Header>
@@ -67,7 +66,8 @@ if ( isset( $_POST['post-submit'])) {
 					<i class="fa-solid fa-newspaper"></i>
 					&nbsp;New Post</a></li>
 					<li class=""><a href="Categories.php">
-					<i class="fa-solid fa-book-atlas"></i>					&nbsp;Categories</a></li>
+					<i class="fa-solid fa-book-atlas"></i>
+					&nbsp;Categories</a></li>
 					<li><a href="Categories.php">
 					<i class="fa-solid fa-lock"></i>
 					&nbsp;Manage Admin</a></li>

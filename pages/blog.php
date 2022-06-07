@@ -30,12 +30,18 @@ if ( isset($_POST['submit'])) {
         <!-- MDB icon -->
         <link rel="icon" href="../img/icon/favicon.ico" type="image/x-icon" />
         <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/dd822cdcdc.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
         <!-- Google Fonts Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
         <!-- MDB -->
-        <link rel="stylesheet1" href="../css/bootstrap.css" />
+        <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../js/formLogic.js"></script>
+
+        <link rel="stylesheet" href="../css/pagination.css">
+        <link rel="stylesheet1" href="../css/bootstrap.css" /> 
         <link rel="stylesheet" href="../css/mdb.min.css" />
+        <link rel="stylesheet" href="../css/blogCard.css">
     </head>
 
     <body>
@@ -142,77 +148,140 @@ if ( isset($_POST['submit'])) {
                     <section draggable="false" class="container pt-5" data-v-271253ee="">
                         <section class="mb-10 text-center">
                             <h2 class="fw-bold mb-7 text-center">Berita Terbaru</h2>
+                            
                             <!-- Search -->
-                            <section class="container m-5 ">
-                                <div class="input-group justify-content">
+                            <form action="blog.php" method="GET" >
+                                <div class="container m-5 input-group justify-content">
                                     <div class="">
-                                      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                      <input  name="search" type="text" class="form-control rounded" placeholder="Search The Site" aria-label="Search" aria-describedby="search-addon" required/>
                                     </div>
-                                    <button type="button" class="btn btn-primary">
-                                    <i class="fas fa-search"></i>
+                                    <span class="input-group-btn">
+                                        <button  class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
                                     </button>
+                                    </span>
+                                    
                                   </div>
-                            </section>
+                            </form>
+                            
                             <!-- Search -->
-                            <div class="row gx-lg-5">
-                                <div class="col-lg-4 col-md-12 mb-6 mb-lg-0">
-                                    <div class="card shadow-2-strong">
-                                        <div class="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light" style="margin-top: -15px;">
-                                            <img src="../img/event/event_Akhirussanah_3_berita.jpeg" class="img-fluid" alt="" aria-controls="#picker-editor" />
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Peserta Juara Lomba Membaca Al-Qur'an</h5>
-                                            <p class="card-text">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem explicabo laudantium facere totam cupiditate harum accusantium atque, animi, nam tenetur aliquam quod, quis praesentium
-                                                consequuntur! Ex doloremque dicta voluptatem at?
-                                            </p>
-                                            <a href="../blog/2022_02_02.php" class="btn btn-primary btn-rounded" aria-controls="#picker-editor">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-4 mb-6 mb-lg-0">
-                                    <div class="card shadow-2-strong">
-                                        <div class="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light" style="margin-top: -15px;">
-                                            <img src="../img/event/event_Akhirussanah_2.jpeg" class="img-fluid" alt="" aria-controls="#picker-editor" />
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Pembagian Hadiah Pemenang Lomba</h5>
-                                            <p class="card-text">Suspendisse in volutpat massa. Nulla facilisi. Sed aliquet diam orci, nec ornare metus semper sed. Integer volutpat ornare erat sit amet rutrum.</p>
-                                            <a href="#!" class="btn btn-primary btn-rounded disabled" aria-controls="#picker-editor">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <!-- Main Content -->
+                            <?php
+					$page = 1;
+					$query = "";
+					if ( isset($_GET['search'])) {
+						if ( empty($_GET['search'])) {
+							Redirect_To('blog.php');
+						}else {
+							$search = $_GET['search'];
+							$query = "SELECT * FROM cms_post WHERE post_date_time LIKE '%$search%' OR title LIKE '%$search%' OR category LIKE '$search%' ";
+						}
+					}else if ( isset($_GET['category'])) {
+						$query = "SELECT * FROM cms_post WHERE category = '$_GET[category]'";
+					}else if ( isset($_GET['page'])){
+						$page = $_GET['page'];
+						$showPost = ($page * 5) - 5;
+						if ($page <= 0) {
+							$showPost = 0;
+						}
+						$query = "SELECT * FROM cms_post ORDER BY post_date_time DESC LIMIT $showPost,5	";
 
-                                <div class="col-lg-4 mb-6 mb-lg-0">
-                                    <div class="card shadow-2-strong">
-                                        <div class="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light" style="margin-top: -15px;">
-                                            <img src="../img/event/event_Akhirussanah_3.jpeg" class="img-fluid" alt="" aria-controls="#picker-editor" />
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Pembagian Sembako</h5>
-                                            <p class="card-text">Curabitur tristique, mi a mollis sagittis, metus felis mattis arcu, non vehicula nisl dui quis diam. Mauris ut risus eget massa volutpat feugiat. Donec.</p>
-                                            <a href="#!" class="btn btn-primary btn-rounded disabled" aria-controls="#picker-editor">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
+					}else{
 
-                                <div class="col-lg-4 mb-6 mb-lg-0" style="margin-top: 2cm;">
-                                    <div class="card shadow-2-strong">
-                                        <div class="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data data-mdb-ripple-color="light" style="margin-top: -15px;">
-                                            <img src="../img/event/event_Akhirussanah_3.jpeg" class="img-fluid" alt="" aria-controls="#picker-editor" />
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Coming soon</h5>
-                                            <p class="card-text">Coming soon....</p>
-                                            <a href="#!" class="btn btn-primary btn-rounded disabled" aria-controls="#picker-editor">Read more</a>
-                                        </div>
+						$query = "SELECT * FROM cms_post ORDER BY post_date_time DESC LIMIT 0,5	";						
+					}
+
+					$exec = Query($query) or die(mysqli_error($con));
+					if( $exec ) {
+						if (mysqli_num_rows($exec) > 0) {
+							while ( $post = mysqli_fetch_assoc($exec) ) {
+								$post_id = $post['post_id'];
+								$post_date = $post['post_date_time'];
+								$post_title = $post['title'];
+								$post_category = $post['category'];
+								$post_author = $post['author'];
+								$post_image = $post['image'];
+								$post_content = substr($post['post'], 0,150) . '...'; 
+							?>
+                            
+                            <div class="blog-card post">
+                                <div class="meta">
+                                    <div class="photo" style="background-image: url(Upload/Image/<?php echo $post_image; ?>);"></div>
+                                        <ul class="details">
+                                            <li class="author"><a href="#"><?php echo htmlentities($post_author)?></a></li>
+                                            <li class="date"><?php echo htmlentities($post_date)?></li>
+                                            <li class="tags">
+                                        <ul>
+                                            <li><a href="#"><?php echo htmlentities($post_category)?> </a></li>
+                                        </ul>
+                                         
+                                        </ul>
                                     </div>
+                                <div class="description">
+                                    <h1><?php echo htmlentities($post_title); ?></h1>
+                                    <h2></h2>
+                                    <p><?php echo htmlentities($post_content); ?></p>
+                                    <p class="read-more">
+                                        <a href="Post.php?id=<?php echo $post_id;?>">Read More</a>
+                                    </p>
                                 </div>
                             </div>
+
+                            <?php
+							}
+
+						}else {
+							echo "<span class='lead'>No result<span>";
+						}
+					}else {
+
+					}
+				?>
+                            <!-- Main Content -->
                         </section>
                     </section>
-                    <!---->
+                    
+                    
+                    <!-- Pagination -->
+                    <div class=""></div>
+                    <?php  if(!isset($_GET['category'])) { ?>
+				<ul class="pagination pagination-lg">
+				<?php
+					if ($page > 1) {
+						?>
+						<li><a href="Blog.php?page=<?php echo $page - 1; ?>"><</a></li>
+						<?php
+					}
+					$sql = "SELECT COUNT(*) FROM cms_post";
+					$exec = Query($sql);
+					$rowCount = mysqli_fetch_array($exec);
+					$totalRow = array_shift($rowCount);
+					$postPerPage = ceil($totalRow / 5);
+
+					for ($count = 1; $count <= $postPerPage; $count++){
+						if ($page == $count) {
+							?>
+							<li class="active"><a href="Blog.php?page=<?php echo $count ?>"><?php echo $count ?></a></li>
+							<?php
+						}else {
+							?>
+							<li><a href="Blog.php?page=<?php echo $count ?>"><?php echo $count ?></a></li>
+							<?php
+						}
+					}
+					if($page < $postPerPage) {
+						?>
+						<li><a href="Blog.php?page=<?php echo $page + 1; ?>">></a></li>
+						<?php
+					}
+				?>
+				<?php
+					}
+				?>
+				</ul>
+                    <!-- Pagination -->
+
                 </div>
             </div>
         </div>

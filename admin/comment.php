@@ -15,7 +15,7 @@
 			if ($exec) {
 				$_SESSION['successMessage'] = "Your Comment Has Been Submitted. We Will Notify You If Your Post Has Been Approved Via Email";
 				mysqli_close($con);
-				Redirect_To("Post.php?id=$postID");
+				Redirect_To("../pages/Post.php?id=$postID");
 			}else {
 				$_SESSION['errorMessage'] = "Something Went Wrong Please Try Again Later";
 			}
