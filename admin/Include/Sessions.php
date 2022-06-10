@@ -45,7 +45,7 @@ function deleteCategory () {
 }
 
 function ConfirmLogin () {
-	$login = false;
+	$login = true;
 	if ( isset($_SESSION['user_id'])) {
 		$login = true;
 	}
