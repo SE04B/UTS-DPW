@@ -2,61 +2,9 @@
 <?php require_once('Include/functions.php') ?>
 <?php ConfirmLogin(); ?>
 <?php
-// require_once ('ApproveComment.php');
-// require_once ('UnnaproveCcomment.php');
-// if ( isset($_GET['Approve_ID'])) {
-// 	if ( !empty($_GET['Approve_ID'])) {
-// 		$sql = "UPDATE comment SET status ='approved', approve_by = '$_SESSION[username]' WHERE id = '$_GET[Approve_ID]'";
-// 		$exec = Query($sql);
-// 		if ( $exec) {
-// 			$_SESSION['SuccessMessage'] = 'Post Has Been Approved';
-// 			mysqli_close($con);
-// 			Redirect_To('Comments.php');
-// 		}else {
-// 			$_SESSION['errorMessage'] = 'Something Went Wrong Please Try Again';
-// 			Redirect_To['Comments.php'];
-// 			mysqli_close($con);
-// 		}
-// 	}else {
-// 		Redirect_To('Comments.php');
-// 	}
-// }
-
-// if ( isset($_GET['Unapprove_ID'])) {
-// 	if ( !empty($_GET['Unapprove_ID'])) {
-// 		$sql = "UPDATE comment SET status ='unapprove'  WHERE id = '$_GET[Unapprove_ID]'";
-// 		$exec = Query($sql);
-// 		if ( $exec) {
-// 			$_SESSION['SuccessMessage'] = 'Post Has Been Unapproved';
-// 			mysqli_close($con);
-// 			Redirect_To('Comments.php');
-// 		}else {
-// 			$_SESSION['errorMessage'] = 'Something Went Wrong Please Try Again';
-// 			Redirect_To['Comments.php'];
-// 			mysqli_close($con);
-// 		}
-// 	}else {
-// 		Redirect_To('Comments.php');
-// 	}
-// }
-
-if ( isset($_GET['Delete_ID'])) {
-    if ( !empty($_GET['Delete_ID'])) {
-        $sql = "DELETE FROM comment WHERE id = '$_GET[Delete_ID]' AND status = 'unapprove' ";
-        $exec = Query($sql);
-        if ( $exec) {
-            $_SESSION['SuccessMessage'] = 'Post Has Been Deleted';
-            mysqli_close($con);
-            Redirect_To('Comments.php');
-        }else {
-            $_SESSION['errorMessage'] = 'Something Went Wrong Please Try Again';
-            Redirect_To['Comments.php'];
-            mysqli_close($con);
-        }
-    }else {
-        Redirect_To('Comments.php');
-    }
-}
+include_once ('ApproveComment.php');
+include_once('UnnaproveComment.php');
+include_once ('deleteComment.php');
 ?>
 
 <!DOCTYPE html>
@@ -157,6 +105,7 @@ if ( isset($_GET['Delete_ID'])) {
 								<th>Action</th>
 							</tr>
 							<?php
+								
 								while ($post = mysqli_fetch_assoc($exec)) {
 									$comment_id = $post['id'];
 									$comment_dateTime = $post['date_time'];
@@ -200,6 +149,7 @@ if ( isset($_GET['Delete_ID'])) {
 								<th>Action</th>
 							</tr>
 							<?php
+								
 								while ($post = mysqli_fetch_assoc($exec)) {
 									$comment_id = $post['id'];
 									$comment_dateTime = $post['date_time'];
@@ -213,27 +163,16 @@ if ( isset($_GET['Delete_ID'])) {
 									<td><?php echo $comment_email; ?></td>
 									<td><?php echo $comment_content; ?></td>
 									<td><?php echo $comment_status; ?></td>
+									<td><?php echo $comment_id?></td>
 									<td>
 										<a href="Comments.php?Approve_ID=<?php echo $comment_id; ?>"><button class="btn btn-success">Approve</button></a>
-										<a href=Comments.php?Delete_ID=<?php echo $comment_id; ?>"><button class="btn btn-danger">Delete</button></a></td>
+										<a href="Comments.php?Delete_ID=<?php echo $comment_id; ?>"><button class="btn btn-danger">Delete</button></a></td>
 									<?php
 									$postNo++;
 								}
 							}
 							?>
 						</table>
-							<?php
-								while ($post = mysqli_fetch_assoc($exec)) {
-									$comment_id = $post['id'];
-									require_once ('/admin/deleteComment.php');
-									?>
-
-									<td>
-										<a href=Comments.php?Delete_ID=<?php echo $comment_id; ?>"><button class="btn btn-danger">Delete</button></a>
-									</td>
-									<?php
-								}
-							?>
 					</div>
 				</div>
 			</div>

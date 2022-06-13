@@ -1,6 +1,7 @@
 <?php
 include('admin/Include/Sessions.php');
 include('admin/Include/functions.php');
+include_once('admin/Include/Database.php');
 if ( isset($_POST['submit'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -36,6 +37,7 @@ if ( isset($_POST['submit'])) {
         <!-- MDB -->
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/mdb.min.css" />
+          
     </head>
 
     <body>
@@ -161,6 +163,7 @@ if ( isset($_POST['submit'])) {
                             <h2 class="fw-bold mb-5 text-center">Berita Acara Terbaru <br /></h2>
                             <div class="row gx-lg-5 mb-5 align-items-center">
                                 <div class="col-md-6 mb-4 mb-md-0 hover-zoom">
+                                    
                                     <img src="img/event/event_Akhirussanah_1.jpeg" class="w-75 shadow-5-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                                 </div>
                                 <div class="col-md-6 mb-4 mb-md-0">
@@ -238,6 +241,91 @@ if ( isset($_POST['submit'])) {
         </section>
         <!-- Sambutan -->
 
+        <!-- Statistic -->
+        <div class="container my-2">
+        <div class="row">
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div class="align-self-center">
+                <i class="fas fa-pencil-alt text-info fa-3x"></i>
+              </div>
+              <div class="text-end">
+                <?php 
+                    $sql = "SELECT * FROM cms_post";
+                    
+                    if ($result = mysqli_query($con,$sql)) {
+                        $postRowCount = mysqli_num_rows($result);
+                    }else
+                    $postRowCount = 0 ;
+                ?>
+                <h3><?php echo $postRowCount ?></h3>
+                <p class="mb-0">Posts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div class="align-self-center">
+                <i class="far fa-comment-alt text-warning fa-3x"></i>
+              </div>
+              <div class="text-end">
+                <?php 
+                    $sql = "SELECT * FROM comment";
+                    
+                    if ($result = mysqli_query($con,$sql)) {
+                        $commentRowCount = mysqli_num_rows($result);
+                    }else
+                    $commentRowCount = 0 ;
+                ?>
+                <h3><?php echo $commentRowCount ?></h3>
+                <p class="mb-0">Comments</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div>
+                <h3 class="text-success">156</h3>
+                <p class="mb-0">Murid</p>
+              </div>
+              <div class="align-self-center">
+                <i class="far fa-user text-success fa-3x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div class="align-self-center">
+                <i class="fas fa-map-marker-alt text-danger fa-3x"></i>
+              </div>
+              <div class="text-end">
+                <h3><script type="text/javascript" src="admin/Include/visitorCounter.php?show=this"></script></h3>
+                <!-- <h3><?php echo $outCode?></h3> -->
+                <p class="mb-0">Total Website Visits</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+        </div>
+        
+        <!-- Statistic -->
         <!-- Map -->
         <div id="preview" class="preview">
             <div style="display: none;"></div>
