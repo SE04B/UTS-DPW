@@ -82,7 +82,7 @@ if ( isset($_POST['submit'])) {
                             </li>
                             <li class="nav-item">
                                 <a>
-                                    <button type="button" class="btn btn-primary btn-rounded" data-bs-toggle="modal" data-bs-target="#modalForm">
+                                    <button type="button" class="btn btn-primary btn-rounded" >
                                         Login
                                     </button>
                                 </a>

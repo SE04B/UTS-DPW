@@ -89,8 +89,6 @@
                 <!---->
                 <section draggable="false" class="container pt-5" data-v-271253ee="">
                     <section class="mb-10">
-                    <?php echo SuccessMessage(); ?>
-				<?php echo Message(); ?>
 				<?php
 					if( isset($_GET['id'])) {
 						$query = "SELECT * FROM cms_post WHERE post_id = '$_GET[id]'";
