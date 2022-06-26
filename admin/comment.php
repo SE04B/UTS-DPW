@@ -13,7 +13,7 @@
 			$sql = "INSERT INTO comment (date_time, email, comment, status, post_id) VALUES('$dateTime', '$email', '$comment', '$status', '$postID' )";
 			$exec = Query($sql);
 			if ($exec) {
-				$_SESSION['successMessage'] = "Your Comment Has Been Submitted. We Will Notify You If Your Post Has Been Approved Via Email";
+				$_SESSION['successMessage'] = "Your Comment Has Been Submitted.";
 				mysqli_close($con);
 				Redirect_To("../pages/Post.php?id=$postID");
 			}else {

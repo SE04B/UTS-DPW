@@ -1,5 +1,6 @@
 <?php require_once('../admin/Include/Sessions.php'); ?>
 <?php require_once('../admin/Include/functions.php') ?>
+
 <?php 
 	if ( isset($_GET['id']) ) {
 		$post_id = $_GET['id'];
@@ -84,6 +85,7 @@
     <div id="preview" class="preview">
         <div style="display: none;"></div>
         <div>
+        <?php echo SuccessMessage(); ?>
             <div style="position: relative;" data-draggable="true" class="">
                 <!---->
                 <!---->

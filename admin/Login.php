@@ -3,6 +3,7 @@ include('Include/Sessions.php');
 include('Include/functions.php');
 include_once('Include/Database.php');
 include_once('Include/loginLogic.php');
+include_once('Include/Security/WAF.php');
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ include_once('Include/loginLogic.php');
 <header style="margin: 2cm;">
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div class="container">
-                    <a class="navbar-brand" href="index.php">
+                    <a class="navbar-brand" href="../index.php">
                         <img src="../img/LogoPonpes_remove.png" height="30" alt="Pondok Pesantren Nurul Jadid Al - Mas'udiyah" loading="lazy" />
                     </a>
                     <!-- Responsive Header -->
@@ -78,7 +79,6 @@ include_once('Include/loginLogic.php');
 
     <form action="Login.php" method="post">
     <section class="h-100">
-        <?php echo SuccessMessage(); ?>
 		<?php echo Message(); ?>
 		<div class="container h-100">
 			<div class="row justify-content-sm-center h-100">

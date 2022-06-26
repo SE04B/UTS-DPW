@@ -2,6 +2,7 @@
 include('admin/Include/Sessions.php');
 include('admin/Include/functions.php');
 include_once('admin/Include/Database.php');
+include_once('admin/Include/Vcounter.php');
 ?>
 
 <!DOCTYPE html>
@@ -267,7 +268,7 @@ include_once('admin/Include/Database.php');
               </div>
               <div class="text-end">
                 <h3><script type="text/javascript" src="admin/Include/visitorCounter.php?show=this"></script></h3>
-                <!-- <h3><?php echo $outCode?></h3> -->
+                <h3><?php echo $id?></h3>
                 <p class="mb-0">Total Website Visits</p>
               </div>
             </div>

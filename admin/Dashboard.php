@@ -38,7 +38,7 @@
         </button>
 
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../index.php">
           <img src="../img/icon/favicon.ico" height="25" alt="" loading="lazy" />
         </a>
           

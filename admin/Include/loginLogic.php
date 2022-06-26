@@ -10,7 +10,7 @@ if ( isset($_POST['submit'])) {
 			$_SESSION['successMessage'] = 'Login Successfully Welcome ' . $foundAccount['username'];
 			$_SESSION['user_id'] = $foundAccount['id'];
 			$_SESSION['username'] = $foundAccount['username'];
-			Redirect_To('admin/Dashboard.php');
+			Redirect_To('Dashboard.php');
 		}else {
 			$_SESSION['errorMessage'] = 'Username/Password Is Invalid';
 		}
