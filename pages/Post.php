@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="../css/mdb.min.css" />
     <link rel="stylesheet" href="../css/commentSection.css">
 </head>
-
 <body>
 
     <header style="margin: 2cm;">
@@ -46,7 +45,7 @@
                         <span class="fas fa-bars"></span>
                     </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a href="../index.php">
@@ -56,29 +55,35 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/ppdb.php">
+                            <a href="ppdb.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         PPDB
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/blog.php">
+                            <a href="blog.php">
                                 <button type="button" class="btn btn-success btn-rounded">
                                         Berita
                                     </button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/aboutus.php">
+                            <a href="aboutus.php">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         Tentang Kami
                                     </button>
                             </a>
                         </li>
+                        <li class="nav-item" >
+                            <a href="../admin/Login.php">
+                                <button type="button" class="btn btn-link px-3 me-2">
+                                        Login
+                                    </button>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </div>
         </nav>
 
     </header>
