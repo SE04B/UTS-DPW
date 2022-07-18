@@ -1,0 +1,4 @@
+name: dpw
+recipe: lamp
+config:
+  webroot: .

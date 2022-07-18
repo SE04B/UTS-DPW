@@ -35,49 +35,84 @@ if ( isset( $_POST['post-delete'])) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Delete Post</title>
-	<script src="jquery-3.2.1.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bootstrap/css/login.css">
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Material Design for Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="../css/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="../css/admin.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-<div class="heading">
-	<a href=""><p>Visit Blog</p></a>
-</div>
-<div class="container-fluid">
-	<div class="main">
-		<div class="row">
-			<div class="col-sm-2">
-				<ul id="side-menu" class="nav nav-pills nav-stacked">
-					<li class=""><a href="Dashboard.php">
-					<span = class="glyphicon glyphicon-th"></span>
-					 &nbsp;Dashboard</a></li>
-					<li class=""><a href="NewPost.php">
-					<span = class="glyphicon glyphicon-list"></span>
-					&nbsp;New Post</a></li>
-					<li class=""><a href="Categories.php">
-					<span = class="glyphicon glyphicon-tags"></span>
-					&nbsp;Categories</a></li>
-					<li><a href="Categories.php">
-					<span = class="glyphicon glyphicon-user"></span>
-					&nbsp;Manage Admin</a></li>
-					<li><a href="Dashboard.php">
-					<span = class="glyphicon glyphicon-comment"></span>
-					&nbsp;Comments</a></li>
-					<li><a href="Blog.php">
-					<span = class="glyphicon glyphicon-equalizer"></span>
-					&nbsp;Live Blog</a></li>
-					<li><a href="Lagout.php">
-					<span = class="glyphicon glyphicon-log-out"></span>
-					&nbsp;Lagout</a></li>
-				</ul>
-			</div>
-			<div class="col-xs-10">
-				<div class="page-title"><h1>Delete Post</h1></div>
+  <!--Main Navigation-->
+  <header>
+
+      <!-- Navbar -->
+      <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <!-- Using Javascript -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+          <img src="../img/icon/favicon.ico" height="25" alt="" loading="lazy" />
+        </a>
+          
+
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+   <!-- Sidebar -->
+   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="Dashboard.php" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+          </a>
+          <a href="NewPost.php" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-chart-area fa-fw me-3"></i><span>New Post </span>
+          </a>
+          <a href="Admin.php" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fas fa-lock fa-fw me-3"></i><span>Manage Admin</span></a>
+          <a href="Categories.php" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fas fa-chart-line fa-fw me-3"></i><span>Categories</span></a>
+          <a href="Comments.php" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span>
+          </a>
+          <a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple"><i
+              class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+
+
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+      <!-- Section: Main chart -->
+      <div class="col-xs-10">
+				<div class="page-title"><h2>Delete Post</h2></div>
 					<?php echo Message(); ?>
 					<?php echo SuccessMessage(); ?>
 					<form action="deletepost.php" method="POST" enctype="multipart/form-data">
@@ -114,14 +149,14 @@ if ( isset( $_POST['post-delete'])) {
 									?>
 								</select>
 							</div>
-							<label>Existing Image: <img src="Upload/Image/<?php echo $post_image;  ?>" width='250' height='90'> </label>
+							<label>Existing Image: <img src="../pages/Upload/Image/<?php echo $post_image;  ?>" width='180' height='120'> </label>
 							<div class="form-group">
 								<labal for="post-image">Change Image</labal>
 								<input disabled type="File" name="post-image" class="form-control">
 							</div>
 							<div class="form-group">
 								<labal for="post-content">Existing Content</labal>
-								<textarea disabled rows="20" class="form-control" name="post-content" id="post-content"><?php echo htmlentities($post_content);  mysqli_close($con); ?></textarea>
+								<textarea disabled rows="10" class="form-control" name="post-content" id="post-content"><?php echo htmlentities($post_content);  mysqli_close($con); ?></textarea>
 							</div>
 							<input type="hidden" name="deleteID" value="<?php echo $_GET['delete_post_id']; ?>">
 							<input type="hidden" name="currentImage" value="<?php echo $post_image; ?>">
@@ -131,14 +166,25 @@ if ( isset( $_POST['post-delete'])) {
 			</div>
 		</div>
 	</div>
-	<div class="row" id="footer">
-		<div class="col-sm-12">
-		<hr>
-			<p>All Rights Reserved 2017 | Theme By :  Alger Makiputin</p>
-		<hr>
-		</div>
+	<div class="row navbar-inverse" id="footer">
 	</div>
 </div>
+
 <script type="text/javascript" src="jquery.js"></script>
+        </div>
+      </section>
+      <!-- Section: Main chart -->
+
+      
+  </main>
+  <!--Main layout-->
+  <!-- MDB -->
+  <script type="text/javascript" src="../../js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="../../js/admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
+
 </html>

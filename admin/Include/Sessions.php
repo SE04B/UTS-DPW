@@ -1,4 +1,5 @@
 <?php
+include_once('Security/WAF.php');
 session_start();
 
 function Message () {

@@ -46,7 +46,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../pages/event.php">
+                            <a href="../pages/blog.php">
                                 <button type="button" class="btn btn-success btn-rounded">
                                         Berita
                                     </button>
@@ -100,7 +100,7 @@
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="../index.php " class="nav-link px-2 text-muted">Home</a></li>
             <li class="nav-item"><a href="../pages/ppdb.php " class="nav-link px-2 text-muted">PPDB</a></li>
-            <li class="nav-item"><a href="../pages/event.php " class="nav-link px-2 text-muted">Berita</a></li>
+            <li class="nav-item"><a href="../pages/blog.php " class="nav-link px-2 text-muted">Berita</a></li>
             <li class="nav-item"><a href="../pages/aboutus.php " class="nav-link px-2 text-muted">Tentang Kami</a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Pondok Pesantren Nurul Jadid Al - Mas'udiyah</p>
