@@ -1,8 +1,8 @@
 <?php require_once('Include/Sessions.php'); ?>
 <?php require_once('Include/functions.php') ?>
 <?php
-	if(isset($_POST['submit'])) {
-		if(!empty($_POST['submit'])) {
+	if (isset($_POST['submit'])) {
+		if (!empty($_POST['submit'])) {
 			date_default_timezone_set('Asia/Manila');
 			$time = time();
 			$dateTime = strftime('%Y-%m-%d %H:%M:%S ',$time);
@@ -16,7 +16,7 @@
 				$_SESSION['successMessage'] = "Your Comment Has Been Submitted.";
 				mysqli_close($con);
 				Redirect_To("../pages/Post.php?id=$postID");
-			}else {
+			} else {
 				$_SESSION['errorMessage'] = "Something Went Wrong Please Try Again Later";
 			}
 		}
