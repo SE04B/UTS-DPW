@@ -122,8 +122,6 @@ if ( isset( $_POST['post-update'])) {
     </nav>
     <!-- Sidebar -->
 
-
-
   <!--Main layout-->
   <main style="margin-top: 58px">
     <div class="container pt-4">
@@ -196,7 +194,6 @@ if ( isset( $_POST['post-update'])) {
       </section>
       <!-- Section: Main chart -->
 
-      
   </main>
   <!--Main layout-->
   <!-- MDB -->

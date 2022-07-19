@@ -1,5 +1,5 @@
 <?php require_once('Include/Sessions.php') ?>
-<?php require_once('Include/functions.php') ?>
+<?php require_once('Include/Functions.php') ?>
 <?php ConfirmLogin(); ?>
 
 <!DOCTYPE html>
@@ -49,31 +49,29 @@
     <!-- Navbar -->
   </header>
   <!--Main Navigation-->
-   <!-- Sidebar -->
-   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-      <div class="position-sticky">
-        <div class="list-group list-group-flush mx-3 mt-4">
-          <a href="News.php" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>News</span>
-          </a>
-          <a href="NewPost.php" class="list-group-item list-group-item-action py-2 ripple">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>New Post </span>
-          </a>
-          <a href="ManageAdmin.php" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-lock fa-fw me-3"></i><span>Manage Admin</span></a>
-          <a href="Categories.php" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-chart-line fa-fw me-3"></i><span>Categories</span></a>
-          <a href="Comments.php" class="list-group-item list-group-item-action py-2 ripple">
-            <i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span>
-          </a>
-          <a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple"><i
-              class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
-        </div>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a href="News.php" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>News</span>
+        </a>
+        <a href="NewPost.php" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-area fa-fw me-3"></i><span>New Post </span>
+        </a>
+        <a href="ManageAdmin.php" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-lock fa-fw me-3"></i><span>Manage Admin</span></a>
+        <a href="Categories.php" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-chart-line fa-fw me-3"></i><span>Categories</span></a>
+        <a href="Comments.php" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span>
+        </a>
+        <a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
       </div>
-    </nav>
-    <!-- Sidebar -->
-
-
+    </div>
+  </nav>
+  <!-- Sidebar -->
 
   <!--Main layout-->
   <main style="margin-top: 58px">
@@ -82,7 +80,7 @@
       <section class="mb-4">
         <div class="">
           <div class="card-header py-3">
-            <h5 class="mb-0 text-center"><strong>Dashboard</strong></h5>
+            <h5 class="mb-0 text-center"><strong>News</strong></h5>
           </div>
           <div class="col-xs-10">
 				<div>
