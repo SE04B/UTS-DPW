@@ -12,23 +12,23 @@
 		$creator = $_SESSION['username'];
 		if (empty($username) || empty($password) || empty($confirmPassword)) {
 			$_SESSION['errorMessage'] = 'All Fields Must Be Fill Out';
-			Redirect_To('Admin.php');
+			Redirect_To('ManageAdmin.php');
 		} else if (strlen($password) < 7) {
 			$_SESSION['errorMessage'] = 'Password Must Be 7 Or More Characters';
-			Redirect_To('Admin.php');
+			Redirect_To('ManageAdmin.php');
 		} else if ($password !== $confirmPassword) {
 			$_SESSION['errorMessage'] = 'Password And Re-tpe Password Does Not Match';
-			Redirect_To('Admin.php');
+			Redirect_To('ManageAdmin.php');
 		} else {
 			$sql = "INSERT INTO cms_admin (date_time, username, password, added_by) VALUES('$dateTime', '$username', '$password', '$creator')";
 			$exec = Query($sql);
 			if ($exec) {
 				$_SESSION['successMessage'] = 'New Admin Has Been Created Successfully';
 				mysqli_close($con);
-				Redirect_To('Admin.php');
+				Redirect_To('ManageAdmin.php');
 			} else {
 				$_SESSION['errorMessage'] = 'Something Went Wrong Please Try Again Later';
-				Redirect_To('Admin.php');
+				Redirect_To('ManageAdmin.php');
 			}
 		}
 	}
@@ -40,12 +40,12 @@
 			if ($exec) {
 				$_SESSION['successMessage'] = 'Admin Deleted Successfully';
 				mysqli_close($con);
-				Redirect_To('Admin.php');
+				Redirect_To('ManageAdmin.php');
 				
 			} else {
 				$_SESSION['errorMessage'] = 'Something Went Wrong Please Try Again Later';
 				mysqli_close($con);
-				Redirect_To('Admin.php');
+				Redirect_To('ManageAdmin.php');
 
 			}
 		}
@@ -134,7 +134,7 @@
 					<div>
 						<div class="row">
 							<div class="col-md-12 ">
-								<form method="POST" action="Admin.php">
+								<form method="POST" action="ManageAdmin.php">
 									<fieldset>
 										<div class="form-group">
 											<label for="username">Username</label>
@@ -180,7 +180,7 @@
 												<td>$dateAdded</td>
 												<td>$username</td>
 												<td>$creator</td>
-												<td><a href='Admin.php?del_admin=$id'><button class='btn btn-danger'>Delete</button></a></td>
+												<td><a href='ManageAdmin.php?del_admin=$id'><button class='btn btn-danger'>Delete</button></a></td>
 											</tr>
 										";
 										$num++;
