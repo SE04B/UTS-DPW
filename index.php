@@ -1,6 +1,6 @@
 <?php
 include('admin/Include/Sessions.php');
-include('admin/Include/functions.php');
+include('admin/Include/Functions.php');
 include_once('admin/Include/Database.php');
 include_once('admin/Include/Vcounter.php');
 ?>

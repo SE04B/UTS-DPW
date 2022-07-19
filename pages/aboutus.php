@@ -1,6 +1,6 @@
 <?php
 include('../admin/Include/Sessions.php');
-include('../admin/Include/functions.php');
+include('../admin/Include/Functions.php');
 ?>
 
 <!DOCTYPE html>

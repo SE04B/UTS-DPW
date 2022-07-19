@@ -1,8 +1,8 @@
 <?php
-$server = 'localhost';
-$username = 'root';
-$password = '';
-$db_name = 'nuruljadid';
+$server = 'database';
+$username = 'lamp';
+$password = 'lamp';
+$db_name = 'lamp';
 $con;
 
 try{
