@@ -82,7 +82,7 @@ include_once('admin/Include/Vcounter.php');
             <div style="display: none;"></div>
             <div>
                 <div style="position: relative;" data-draggable="true" class="" draggable="false">
-                    <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section draggable="false" class="container" data-v-271253ee="">
                         <section class="mb-10">
                             <!-- Background image -->
                             <div

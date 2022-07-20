@@ -83,6 +83,9 @@
 					<a href="Comments.php" class="list-group-item list-group-item-action py-2 ripple">
 					<i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span></a>
 
+					<a href="AboutUs.php" class="list-group-item list-group-item-action py-2 ripple">
+        			<i class="fas fa-user fa-fw me-3"></i><span>About Us</span></a>
+
 					<a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
 				</div>
 			</div>
@@ -99,7 +102,7 @@
 				</button>
 
 				<!-- Brand -->
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="../index.php">
 				<img src="../img/icon/favicon.ico" height="25" alt="" loading="lazy" />
 				</a>
 			</div>
@@ -142,9 +145,7 @@
 								</div>
 								<div class="form-group">
 									<labal for="post-content">Content</labal>
-									<textarea rows="10" class="form-control" name="post-content" id="post-content">
-										
-									</textarea>
+									<textarea rows="10" class="form-control" name="post-content" id="post-content"></textarea>
 								</div>
 								<div class="form-group">
 									<button name="post-submit" class="btn btn-primary form-control">Publish</button>
