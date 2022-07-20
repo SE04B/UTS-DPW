@@ -157,6 +157,13 @@
 											<label for="cat_name">Misi</label>
 											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan misi di sini">
 										</div>
+
+                                        <div class="form-group" style="margin-top:1cm ;">
+                                            <label for="cat_name">Nama Fasilitas 1</label>
+											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
+                                            <input type="File" name="post-image" class="form-control" style="margin-top: 0.25cm;">
+                                        </div>
+
 										<div class="form-group" style="margin-top:1cm ;">
 											<input class="form-control btn btn-primary" type="submit" name="submit_category" value="Add">
 									</fieldset>
