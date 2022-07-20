@@ -135,61 +135,33 @@
 		<section>
 			<div class="container pt-4">
 				<div class="col-xs-10">
-					<div class="page-title"><h1>Manage Category</h1></div>
+					<div class="page-title"><h1>Manage About Us</h1></div>
 					<?php echo Message(); ?>
 					<?php echo SuccessMessage(); ?>
 					<div>
 						<div class="row">
 							<div class="col-md-12 ">
-								<h3>New Category</h3>
 								<form method="POST" action="AboutUs.php">
 									<fieldset>
 										<div class="form-group" style="margin-top:1cm ;">
-											<label for="cat_name">Name</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Name">
+											<label for="cat_name">Tentang Pondok Pesantren Nurul Jadid</label>
+											<input class="form-control input-md" type="text" name="cat_name" placeholder="Ceritakan tentang Pesantren Nurul Jadid">
+										</div>
+
+                                        <div class="form-group" style="margin-top:1cm ;">
+											<label for="cat_name">Visi</label>
+											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan visi di sini">
+										</div>
+
+                                        <div class="form-group" style="margin-top:1cm ;">
+											<label for="cat_name">Misi</label>
+											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan misi di sini">
 										</div>
 										<div class="form-group" style="margin-top:1cm ;">
 											<input class="form-control btn btn-primary" type="submit" name="submit_category" value="Add">
-										</div>
 									</fieldset>
 								</form>
 							</div>
-						</div>
-						<div id="cat_table " style="margin-top:1cm ;">
-							<?php echo deleteCategory(); ?>
-							<h3>Category List</h3>
-							<table class="table table-striped table-hover" >
-								<tr>
-									<th>Number</th>
-									<th>Category Name</th>
-									<th>Date Added</th>
-									<th>Added By</th>
-									<th>Update</th>
-									<th>Delete</th>
-								</tr>
-								<?php
-									$num = 1;
-									$viewSql = "SELECT * FROM cms_category ORDER BY cat_id DESC";
-									$exec = Query($viewSql);
-									while($data = mysqli_fetch_assoc($exec)) {
-										$cat_id = $data['cat_id'];
-										$cat_dateTime = $data['cat_datetime'];
-										$cat_name = $data['cat_name'];
-										$cat_creator = $data['cat_creator'];
-										echo "<tr>
-										<td>$num</td>
-										<td>$cat_name</td>
-										<td>$cat_dateTime</td>
-										<td>$cat_creator</td>
-										<td><input class='btn btn-success' type='button' name='update' value='Edit'></td>
-										<td><a href='AboutUs.php?delete_attempt=$cat_id&name=$cat_name'><button class='btn btn-danger'>Delete</button></a></td>
-										</tr>
-										";
-										$num++;
-									} 
-									mysqli_close($con);
-								?>
-							</table>
 						</div>
 					</div>
 				</div>
