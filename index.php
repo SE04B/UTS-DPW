@@ -21,7 +21,6 @@ include_once('admin/Include/Vcounter.php');
         <!-- MDB -->
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/mdb.min.css" />
-          
     </head>
 
     <body>
@@ -334,8 +333,9 @@ include_once('admin/Include/Vcounter.php');
                                                         </div>
                                                         <div class="flex-grow-1 ms-4">
                                                             <p class="fw-bold mb-1">Kontak Kami</p>
-                                                            <p class="text-muted mb-0">pondoknuruljadidgmail.com</p>
+                                                            <!-- <p class="text-muted mb-0">pondoknuruljadidgmail.com</p> -->
                                                             <p class="text-muted mb-0">+62 858-6864-6334 (Edi)</p>
+                                                            <p class="text-muted mb-0">+62 813-1093-1519 (Gus Rahmat)</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -346,7 +346,7 @@ include_once('admin/Include/Vcounter.php');
                                                         </div>
                                                         <div class="flex-grow-1 ms-4">
                                                             <p class="fw-bold mb-1">Website</p>
-                                                            <p class="text-muted mb-0">pondoknuruljadid.com</p>
+                                                            <p class="text-muted mb-0">nuruljadid.ponpes.id</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -359,6 +359,17 @@ include_once('admin/Include/Vcounter.php');
                                                             <p class="fw-bold mb-1">Bug report</p>
                                                             <p class="text-muted mb-0">muhammadirfani@pm.me</p>
                                                             <p class="text-muted mb-0">+62 822-2009-1122</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-5">
+                                                    <div class="d-flex align-items-start">
+                                                        <div class="flex-shrink-0">
+                                                            <div class="p-3 bg-primary rounded-4 shadow-2-strong"><i class="fas fa-instagram fa-lg text-white fa-fw" aria-controls="#picker-editor"></i></div>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-4">
+                                                            <p class="fw-bold mb-1">Instagram</p>
+                                                            <p class="text-muted mb-0">pon.pes_almasudiyah</p>
                                                         </div>
                                                     </div>
                                                 </div>
