@@ -2,58 +2,10 @@
 <?php require_once('Include/Functions.php'); ?>
 <?php ConfirmLogin(); ?>
 <?php
-	if (isset($_POST['submit_category'])) {
-		date_default_timezone_set('Asia/Manila');
-		$time = time();
-		$dateTime = strftime('%Y-%m-%d ',$time);
-		$categoryName = ($_POST['cat_name']);
-		$category = mysqli_real_escape_string($con,$categoryName);
-		$cat_name_length = strlen($category);
-		$admin = $_SESSION['username']; 
-		if (empty($category)) {
-			$_SESSION['errorMessage'] = 'All Fields Must Be Fill Out' . $category;
-			Redirect_To('AboutUs.php');
-			exit;
-		} else if ($cat_name_length > 50) {
-			$_SESSION['errorMessage'] = 'Category Name Is Too Long.';
-			Redirect_To('AboutUs.php');
-		} else {
-			global $con;
-			$query = "INSERT INTO cms_category (cat_datetime, cat_name,	cat_creator) 
-			VALUES('$dateTime', '$category', '$admin')";
-			$exec = Query($query);
-			if ($exec) {
-				$_SESSION['successMessage'] = 'Category Added Successfully.';
-				Redirect_To('AboutUs.php');
-				mysqli_close($con);
-			} else {
-				$_SESSION['errorMessage'] = 'Something Went Wrong';
-				Redirect_To('AboutUs.php');
-			}
-		}
-	}
-
-	if (isset($_GET['delete_attempt'])) {
-		if (!empty($_GET['delete_attempt'])) {
-			$_SESSION['del_id'] = $_GET['delete_attempt'];
-			$_SESSION['optDeleteCategory'] = "";
-			$_SESSION['categoryName'] = $_GET['name'];
-		} else {
-			Redirect_To('AboutUs.php');
-		}
-	}
-
-	if (isset($_GET['CategoryID'])) {
-		if (!empty($_GET['CategoryID'])) {
-			$sql = "DELETE FROM cms_category WHERE cat_id = $_GET[CategoryID]";
-			$exec = Query($sql);
-			if ($exec) {
-				$_SESSION['successMessage'] = "Category Delete Successfully";
-				Redirect_To('AboutUs.php');
-			} else {
-				Redirect_To('AboutUs.php');
-			}
-		}
+	if(isset($_POST['submit'])){
+		$aboutPostContent = mysqli_real_escape_string($con, $_POST['about-post-content']);
+		$visi = mysqli_real_escape_string($con, $_POST['post-visi']);
+		$misi = mysqli_real_escape_string($con, $_POST['post-misi']);
 	}
 ?>
 
@@ -145,17 +97,17 @@
 									<fieldset>
 										<div class="form-group" style="margin-top:1cm ;">
 											<label for="cat_name">Tentang Pondok Pesantren Nurul Jadid</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Ceritakan tentang Pesantren Nurul Jadid">
+											<input class="form-control input-md" type="text" name="about-post-content" id="about-post-content" placeholder="Ceritakan tentang Pesantren Nurul Jadid">
 										</div>
 
                                         <div class="form-group" style="margin-top:1cm ;">
 											<label for="cat_name">Visi</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan visi di sini">
+											<input class="form-control input-md" type="text" name="post-visi" id="post-visi" placeholder="Tuliskan visi di sini">
 										</div>
 
                                         <div class="form-group" style="margin-top:1cm ;">
 											<label for="cat_name">Misi</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan misi di sini">
+											<input class="form-control input-md" type="text" name="post-misi" id="post-misi" placeholder="Tuliskan misi di sini">
 										</div>
 
                                         <h3 style="margin-top:1cm;">Fasilitas</h3>
@@ -180,7 +132,7 @@
                                         </div>
 
 										<div class="form-group" style="margin-top:1cm;">
-											<input class="form-control btn btn-primary" type="submit" name="submit_category" value="Save">
+											<input class="form-control btn btn-primary" type="submit" name="submit" id="submit" value="Save">
 									</fieldset>
 								</form>
 							</div>
