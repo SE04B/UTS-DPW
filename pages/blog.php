@@ -1,6 +1,6 @@
 <?php
 include('../admin/Include/Sessions.php');
-include('../admin/Include/functions.php');
+include('../admin/Include/Functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -203,7 +203,7 @@ include('../admin/Include/functions.php');
 				<?php
 					if ($page > 1) {
 						?>
-						<li><a href="Blog.php?page=<?php echo $page - 1; ?>"><</a></li>
+						<li><a href="blog.php?page=<?php echo $page - 1; ?>"><</a></li>
 						<?php
 					}
 					$sql = "SELECT COUNT(*) FROM cms_post";
@@ -215,17 +215,17 @@ include('../admin/Include/functions.php');
 					for ($count = 1; $count <= $postPerPage; $count++){
 						if ($page == $count) {
 							?>
-							<li class="active"><a href="Blog.php?page=<?php echo $count ?>"><?php echo $count ?></a></li>
+							<li class="active"><a href="blog.php?page=<?php echo $count ?>"><?php echo $count ?></a></li>
 							<?php
 						}else {
 							?>
-							<li><a href="Blog.php?page=<?php echo $count ?>"><?php echo $count ?></a></li>
+							<li><a href="blog.php?page=<?php echo $count ?>"><?php echo $count ?></a></li>
 							<?php
 						}
 					}
 					if($page < $postPerPage) {
 						?>
-						<li><a href="Blog.php?page=<?php echo $page + 1; ?>">></a></li>
+						<li><a href="blog.php?page=<?php echo $page + 1; ?>">></a></li>
 						<?php
 					}
 				?>

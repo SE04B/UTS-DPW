@@ -1,6 +1,6 @@
 <?php
 include('admin/Include/Sessions.php');
-include('admin/Include/functions.php');
+include('admin/Include/Functions.php');
 include_once('admin/Include/Database.php');
 include_once('admin/Include/Vcounter.php');
 ?>
@@ -21,7 +21,6 @@ include_once('admin/Include/Vcounter.php');
         <!-- MDB -->
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/mdb.min.css" />
-          
     </head>
 
     <body>
@@ -83,7 +82,7 @@ include_once('admin/Include/Vcounter.php');
             <div style="display: none;"></div>
             <div>
                 <div style="position: relative;" data-draggable="true" class="" draggable="false">
-                    <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section draggable="false" class="container" data-v-271253ee="">
                         <section class="mb-10">
                             <!-- Background image -->
                             <div
@@ -111,65 +110,57 @@ include_once('admin/Include/Vcounter.php');
                 </div>
 
                 <!-- Main Content -->
-                <div style="position: relative;" data-draggable="true" class="" draggable="false">
-                    <section draggable="false" class="container pt-5" data-v-271253ee="">
-                        <section id="berita1" class="mb-10">
-                            <h2 class="fw-bold mb-5 text-center">Berita Acara Terbaru <br /></h2>
-                            <div class="row gx-lg-5 mb-5 align-items-center">
-                                <div class="col-md-6 mb-4 mb-md-0 hover-zoom">
-                                    
-                                    <img src="img/event/event_Akhirussanah_1.jpeg" class="w-75 shadow-5-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
-                                </div>
-                                <div class="col-md-6 mb-4 mb-md-0">
-                                    <h3 class="fw-bold">Peserta Juara Lomba Membaca Al-Qur'an</h3>
-                                    <div class="mb-2 text-danger small"><i class="fas fa-book-open me-2" aria-controls="#picker-editor"></i><span>Lomba</span></div>
-                                    <p class="text-muted">Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat vulputate. Ut vulputate est non quam dignissim elementum. Donec a ullamcorper diam.</p>
-                                    <p class="text-muted">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quae nulla saepe rerum aspernatur odio amet perferendis tempora mollitia? Ratione unde magni omnis quaerat blanditiis cumque dolore placeat
-                                        rem dignissimos?
-                                    </p>
-                                    <a class="btn btn-primary" href="blog/2022_02_02.php" role="button" aria-controls="#picker-editor" draggable="false">Read more</a>
-                                </div>
-                            </div>
-                            <div class="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
-                                <div class="col-md-6 mb-4 mb-md-0 hover-zoom">
-                                    <img src="img/event/event_Akhirussanah_2.jpeg" class="w-100 shadow-5-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
-                                </div>
-                                <div class="col-md-6 mb-4 mb-md-0">
-                                    <h3 class="fw-bold">Pembagian Hadiah Pemenang Lomba</h3>
-                                    <div class="mb-2 text-primary small"><i class="fas fa-book-reader me-2" aria-controls="#picker-editor"></i><span>Lomba</span></div>
-                                    <p class="text-muted">
-                                        Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta dui, sit amet rutrum enim massa in ante. Curabitur in justo at lorem laoreet ultricies. Nunc ligula felis, sagittis eget nisi vitae,
-                                        sodales vestibulum purus. Vestibulum nibh ipsum, rhoncus vel sagittis nec, placerat vel justo. Duis faucibus sapien eget tortor finibus, a eleifend lectus dictum. Cras tempor convallis magna id
-                                        rhoncus. Suspendisse potenti. Nam mattis faucibus imperdiet. Proin tempor lorem at neque tempus aliquet. Phasellus at ex volutpat, varius arcu id, aliquam lectus. Vestibulum mattis felis quis ex
-                                        pharetra luctus. Etiam luctus sagittis massa, sed iaculis est vehicula ut.
-                                    </p>
-                                    <a class="btn btn-primary disabled" href="#" role="button" aria-controls="#picker-editor" draggable="false">Read more</a>
+                
+                            
+                            <div style="position: relative;" data-draggable="true">
+                <!---->
+                <!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10 text-center">
+                        <h2 class="fw-bold mb-7 text-center">Latest articles</h2>
+                        <div class="row gx-lg-5">
+                        <?php
+                $query = "SELECT * FROM cms_post ORDER BY post_id  LIMIT 0,3	";
+                $exec = Query($query) or die(mysqli_error($con));
+					if( $exec ) {
+						if (mysqli_num_rows($exec) > 0) {
+							while ( $post = mysqli_fetch_assoc($exec) ) {
+								$post_id = $post['post_id'];
+								$post_date = $post['post_date_time'];
+								$post_title = $post['title'];
+								$post_category = $post['category'];
+								$post_author = $post['author'];
+								$post_image = $post['image'];
+								$post_content = substr($post['post'], 0,150) . '...'; 
+							?>
+                            <div class="col-lg-4 col-md-12 mb-6 mb-lg-0">
+                                <div class="card shadow-2-strong">
+                                    <div class="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light" style="margin-top: -15px"> <?php echo "<img src='pages/Upload/Image/$post_image'"?> class="img-fluid" alt="" aria-controls="#picker-editor"> </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post_title ?></h5>
+                                        <p class="card-text"><?php echo $post_content ?>.</p> <a href="pages/Post.php?id=<?php echo $post_id;?>" class="btn btn-primary btn-rounded" aria-controls="#picker-editor">Read more</a> </div>
                                 </div>
                             </div>
-                            <div class="row gx-lg-5 mb-5 align-items-center">
-                                <div class="col-md-6 mb-4 mb-md-0 hover-zoom">
-                                    <img src="img/event/event_Akhirussanah_3.jpeg" class="w-100 shadow-5-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
-                                </div>
-                                <div class="col-md-6 mb-4 mb-md-0">
-                                    <h3 class="fw-bold">Pembagian Sembako</h3>
-                                    <div class="mb-2 text-warning small"><i class="fas fa-box-open me-2" aria-controls="#picker-editor"></i><span>Akhirussanah</span></div>
-                                    <p class="text-muted">
-                                        Sed sollicitudin purus sed nulla dignissim ullamcorper. Aenean tincidunt vulputate libero, nec imperdiet sapien pulvinar id. Nullam scelerisque odio vel lacus faucibus, tincidunt feugiat augue ornare.
-                                        Proin ac dui vel lectus eleifend vestibulum et lobortis risus. Nullam in commodo sapien. Curabitur ut erat congue sem finibus eleifend egestas eu metus. Sed ut dolor id magna rutrum ultrices ut eget
-                                        libero. Duis vel porttitor odio. Ut pulvinar sed turpis ornare tincidunt. Donec luctus, mi euismod dignissim malesuada, lacus lorem commodo leo, tristique blandit ante mi id metus. Integer et vehicula
-                                        leo, vitae interdum lectus. Praesent nulla purus, commodo at euismod nec, blandit ultrices erat. Aliquam eros ipsum, interdum et mattis vitae, faucibus vitae justo. Nulla condimentum hendrerit leo, in
-                                        feugiat ipsum condimentum ac. Maecenas sed blandit dolor.
-                                    </p>
-                                    <a class="btn btn-primary disabled" href="#" role="button" aria-controls="#picker-editor" draggable="false">Read more</a>
-                                </div>
-                            </div>
-                        </section>
+                            <?php
+							}
+
+						}else {
+							echo "<span class='lead'>No result<span>";
+						}
+					}else {
+
+					}
+				?>
+
+                        </div>
                     </section>
-                    <!---->
-                </div>
+                </section>
+                <!---->
             </div>
         </div>
+    </div>
+
+
         <!-- Main Content -->
 
         <!-- Sambutan -->
@@ -342,8 +333,9 @@ include_once('admin/Include/Vcounter.php');
                                                         </div>
                                                         <div class="flex-grow-1 ms-4">
                                                             <p class="fw-bold mb-1">Kontak Kami</p>
-                                                            <p class="text-muted mb-0">pondoknuruljadidgmail.com</p>
+                                                            <!-- <p class="text-muted mb-0">pondoknuruljadidgmail.com</p> -->
                                                             <p class="text-muted mb-0">+62 858-6864-6334 (Edi)</p>
+                                                            <p class="text-muted mb-0">+62 813-1093-1519 (Gus Rahmat)</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -354,7 +346,7 @@ include_once('admin/Include/Vcounter.php');
                                                         </div>
                                                         <div class="flex-grow-1 ms-4">
                                                             <p class="fw-bold mb-1">Website</p>
-                                                            <p class="text-muted mb-0">pondoknuruljadid.com</p>
+                                                            <p class="text-muted mb-0">nuruljadid.ponpes.id</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -367,6 +359,17 @@ include_once('admin/Include/Vcounter.php');
                                                             <p class="fw-bold mb-1">Bug report</p>
                                                             <p class="text-muted mb-0">muhammadirfani@pm.me</p>
                                                             <p class="text-muted mb-0">+62 822-2009-1122</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-5">
+                                                    <div class="d-flex align-items-start">
+                                                        <div class="flex-shrink-0">
+                                                            <div class="p-3 bg-primary rounded-4 shadow-2-strong"><i class="fas fa-instagram fa-lg text-white fa-fw" aria-controls="#picker-editor"></i></div>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-4">
+                                                            <p class="fw-bold mb-1">Instagram</p>
+                                                            <p class="text-muted mb-0">pon.pes_almasudiyah</p>
                                                         </div>
                                                     </div>
                                                 </div>

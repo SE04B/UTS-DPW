@@ -1,6 +1,6 @@
 <?php
 include('../admin/Include/Sessions.php');
-include('../admin/Include/functions.php');
+include('../admin/Include/Functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +114,7 @@ include('../admin/Include/functions.php');
                         </p>
                     </div>
                     <div class="col-md-6 mb-4 mb-md-0 hover-zoom">
-                        <img src="../img/event/event_Akhirussanah_2.jpeg" class="w-100 shadow-5-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
+                        <img src="../img/logoPonpes.png" class="w-100 shadow-5-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                     </div>
                 </div>
             </section>

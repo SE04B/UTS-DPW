@@ -1,5 +1,5 @@
 <?php require_once('../admin/Include/Sessions.php'); ?>
-<?php require_once('../admin/Include/functions.php') ?>
+<?php require_once('../admin/Include/Functions.php') ?>
 
 <?php 
 	if ( isset($_GET['id']) ) {
