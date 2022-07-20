@@ -94,6 +94,9 @@
 				<a href="Comments.php" class="list-group-item list-group-item-action py-2 ripple">
 				<i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span></a>
 
+				<a href="AboutUs.php" class="list-group-item list-group-item-action py-2 ripple">
+        		<i class="fas fa-user fa-fw me-3"></i><span>About Us</span></a>
+
 				<a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple">
 				<i class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
 			</div>
