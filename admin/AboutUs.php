@@ -76,7 +76,7 @@
 		crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="padding-bottom: 1cm;">
 	<!--Main Navigation-->
 	<header>
 		<!-- Sidebar -->
@@ -158,14 +158,29 @@
 											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan misi di sini">
 										</div>
 
-                                        <div class="form-group" style="margin-top:1cm ;">
+                                        <h3 style="margin-top:1cm;">Fasilitas</h3>
+                                        <button type="button" class="btn btn-success">+ Tambah</button>
+                                        <hr>
+
+                                        <?php ?>
+                                        <div class="form-group">
                                             <label for="cat_name">Nama Fasilitas 1</label>
 											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
-                                            <input type="File" name="post-image" class="form-control" style="margin-top: 0.25cm;">
+                                            <input type="File" name="post-image" class="form-control">
+                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
                                         </div>
 
-										<div class="form-group" style="margin-top:1cm ;">
-											<input class="form-control btn btn-primary" type="submit" name="submit_category" value="Add">
+                                        <div style="margin-top:0.5cm;"></div>
+
+                                        <div class="form-group">
+                                            <label for="cat_name">Nama Fasilitas 2</label>
+											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
+                                            <input type="File" name="post-image" class="form-control">
+                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
+                                        </div>
+
+										<div class="form-group" style="margin-top:1cm;">
+											<input class="form-control btn btn-primary" type="submit" name="submit_category" value="Save">
 									</fieldset>
 								</form>
 							</div>
