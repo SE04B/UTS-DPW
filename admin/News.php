@@ -54,6 +54,8 @@
         <a href="News.php" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
           <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>News</span>
         </a>
+        <a href="PPDB.php" class="list-group-item list-group-item-action py-2 ripple">
+					<i class="fas fa-pen fa-fw me-3"></i><span>PPBD</span></a>
         <a href="NewPost.php" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-area fa-fw me-3"></i><span>New Post </span>
         </a>
@@ -63,7 +65,7 @@
           <i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span>
         </a>
         <a href="AboutUs.php" class="list-group-item list-group-item-action py-2 ripple">
-        <i class="fa fa-user fa-fw me-3"></i><span>About Us</span></a>
+        <i class="fas fa-user fa-fw me-3"></i><span>About Us</span></a>
         <a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
       </div>
     </div>

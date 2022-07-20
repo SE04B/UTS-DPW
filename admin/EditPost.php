@@ -101,6 +101,9 @@
 			<div class="list-group list-group-flush mx-3 mt-4">
 				<a href="News.php" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
 				<i class="fas fa-tachometer-alt fa-fw me-3"></i><span>News</span></a>
+
+				<a href="PPDB.php" class="list-group-item list-group-item-action py-2 ripple">
+				<i class="fas fa-pen fa-fw me-3"></i><span>PPBD</span></a>
 				
 				<a href="NewPost.php" class="list-group-item list-group-item-action py-2 ripple">
 				<i class="fas fa-chart-area fa-fw me-3"></i><span>New Post </span></a>
