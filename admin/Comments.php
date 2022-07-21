@@ -4,7 +4,7 @@
 <?php
 	include_once ('ApproveComment.php');
 	include_once('UnnaproveComment.php');
-	include_once ('deleteComment.php');
+	include_once ('DeleteComment.php');
 ?>
 
 <!DOCTYPE html>

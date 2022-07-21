@@ -114,7 +114,7 @@
 					<div class="page-title"><h2>Delete Post</h2></div>
 						<?php echo Message(); ?>
 						<?php echo SuccessMessage(); ?>
-						<form action="deletepost.php" method="POST" enctype="multipart/form-data">
+						<form action="DeletePost.php" method="POST" enctype="multipart/form-data">
 							<fieldset>
 								<div class="form-group">
 									<button name="post-delete" class="btn btn-danger form-control">DELETE</button>

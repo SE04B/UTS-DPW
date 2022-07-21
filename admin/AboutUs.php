@@ -6,6 +6,15 @@
 		$aboutPostContent = mysqli_real_escape_string($con, $_POST['about-post-content']);
 		$visi = mysqli_real_escape_string($con, $_POST['post-visi']);
 		$misi = mysqli_real_escape_string($con, $_POST['post-misi']);
+		$query = "UPDATE cms_aboutus SET about='$aboutPostContent',vision='$visi',mission='$misi' WHERE id=1 ";
+			$exec = Query($query);
+			if ($exec) {
+				// move_uploaded_file($_FILES['post-image']['tmp_name'], $imageDirectory);
+				$_SESSION['successMessage'] = "Post Added Successfully";
+			} else {
+				$_SESSION['errorMessage'] = "Something Went Wrong Please Try Again";
+
+			}
 	}
 ?>
 
@@ -100,17 +109,26 @@
 									<fieldset>
 										<div class="form-group" style="margin-top:1cm ;">
 											<label for="cat_name">Tentang Pondok Pesantren Nurul Jadid</label>
-											<input class="form-control input-md" type="text" name="about-post-content" id="about-post-content" placeholder="Ceritakan tentang Pesantren Nurul Jadid">
+											<br>
+											<br>
+											<!-- <input class="form-control input-md" type="text" name="about-post-content" id="about-post-content" placeholder="Ceritakan tentang Pesantren Nurul Jadid"> -->
+											<textarea name="about-post-content" id="about-post-content" cols="100" rows="5" placeholder="Ceritakan tentang Pesantren Nurul Jadid "></textarea>
 										</div>
 
                                         <div class="form-group" style="margin-top:1cm ;">
-											<label for="cat_name">Visi</label>
-											<input class="form-control input-md" type="text" name="post-visi" id="post-visi" placeholder="Tuliskan visi di sini">
+											<label for="cat_name"><strong>Visi</strong></label>
+											<br>
+											<br>
+											<!-- <input class="form-control input-md text-area" type="text" name="post-visi" id="post-visi" placeholder="Tuliskan visi di sini"> -->
+											<textarea name="post-visi" id="post-visi" cols="100" rows="5" placeholder="Tuliskan visi di sini"></textarea>
 										</div>
 
                                         <div class="form-group" style="margin-top:1cm ;">
-											<label for="cat_name">Misi</label>
-											<input class="form-control input-md" type="text" name="post-misi" id="post-misi" placeholder="Tuliskan misi di sini">
+											<label for="cat_name"><strong>Misi</strong></label>
+											<br>
+											<br>
+											<!-- <input class="form-control input-md" type="text" name="post-misi" id="post-misi" placeholder="Tuliskan misi di sini"> -->
+											<textarea name="post-misi" id="post-misi" cols="100" rows="5" placeholder="Tuliskan misi di sini"></textarea>
 										</div>
 
                                         <h3 style="margin-top:1cm;">Fasilitas</h3>

@@ -132,7 +132,7 @@
                         <td><?php echo $category; ?></td>
                         <td><?php echo "<img class='img-responsive' src='../pages/Upload/Image/$image' width='180px' height='120px'>"; ?></td>
                         <td><?php echo 'Ongoing'; ?></td>
-                        <td><?php echo "<a href='editpost.php?post_id=$post_id'>Edit</a> | <a href='deletepost.php?delete_post_id=$post_id'>Delete</a>"; ?></td>
+                        <td><?php echo "<a href='EditPost.php?post_id=$post_id'>Edit</a> | <a href='DeletePost.php?delete_post_id=$post_id'>Delete</a>"; ?></td>
                         <td><a href="../pages/Post.php?id=<?php echo $post_id; ?>"><button class="btn btn-primary">Live Preview</button></a></td>
                       </tr>
                   <?php
