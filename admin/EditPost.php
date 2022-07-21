@@ -137,7 +137,7 @@
 						<div class="page-title" style="margin-top:1cm ;"></div>
 						<?php echo Message(); ?>
 						<?php echo SuccessMessage(); ?>
-						<form action="editpost.php" method="POST" enctype="multipart/form-data">
+						<form action="EditPost.php" method="POST" enctype="multipart/form-data">
 							<fieldset>
 								<div class="form-group">
 									<labal for="post-title">Title</labal>

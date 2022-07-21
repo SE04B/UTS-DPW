@@ -79,6 +79,17 @@ include('../admin/Include/Functions.php');
 
     <!-- Main Content -->
     <div style="position: relative;" data-draggable="true" class="" draggable="false">
+    <?php
+    $query = "SELECT * FROM cms_aboutus";
+    $exec = Query($query) or die(mysqli_error($con));
+        if($exec){
+            $post = mysqli_fetch_assoc($exec);
+            $postAbout = $post['about'];
+            $postVisi = $post['vision'];
+            $postMisi = $post['mission'];
+        }
+    ?>
+    
         <section draggable="false" class="container pt-5" data-v-271253ee="">
             <section id="Tentang Kami" class="mb-10 p-5">
                 <h2 class="fw-bold mb-5 text-center">Tentang Kami <br /></h2>
@@ -90,9 +101,7 @@ include('../admin/Include/Functions.php');
                         <h3 class="fw-bold mb-3">Tentang Pondok Pesantren Nurul Jadid</h3>
                         <!-- <div class="mb-2 text-primary small"><i class="fas fa-book-reader me-2" aria-controls="#picker-editor"></i><span>Lomba</span></div> -->
                         <p style="text-align: justify;" class="text-muted ">
-                            Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta dui, sit amet rutrum enim massa in ante. Curabitur in justo at lorem laoreet ultricies. Nunc ligula felis, sagittis eget nisi vitae, sodales vestibulum purus. Vestibulum nibh ipsum, rhoncus
-                            vel sagittis nec, placerat vel justo. Duis faucibus sapien eget tortor finibus, a eleifend lectus dictum. Cras tempor convallis magna id rhoncus. Suspendisse potenti. Nam mattis faucibus imperdiet. Proin tempor lorem at neque
-                            tempus aliquet. Phasellus at ex volutpat, varius arcu id, aliquam lectus. Vestibulum mattis felis quis ex pharetra luctus. Etiam luctus sagittis massa, sed iaculis est vehicula ut.
+                            <?php echo $postAbout ?>
                         </p>
                     </div>
                 </div>
@@ -104,13 +113,11 @@ include('../admin/Include/Functions.php');
                         <h3 class="fw-bold mb-3">Visi</h3>
                         <!-- <div class="mb-2 text-primary small"><i class="fas fa-book-reader me-2" aria-controls="#picker-editor"></i><span>Lomba</span></div> -->
                         <p style="text-align: justify;" class="text-muted">
-                            Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta dui, sit amet rutrum enim massa in ante. Curabitur in justo at lorem laoreet ultricies. Nunc ligula felis, sagittis eget nisi vitae, sodales vestibulum purus.
+                            <?php echo $postVisi ?>.
                         </p>
                         <h3 class="col-md-6 mb-4">Misi</h3>
                         <p style="text-align: justify;" class="text-muted">
-                            1. Vestibulum nibh ipsum, rhoncus vel sagittis nec, placerat vel justo.<br/> 2. Duis faucibus sapien eget tortor finibus, a eleifend lectus dictum. Cras tempor convallis magna id rhoncus.
-                            <br/> 3. Suspendisse potenti. Nam mattis faucibus imperdiet. <br/> 4. Proin tempor lorem at neque tempus aliquet. Phasellus at ex volutpat, varius arcu id, aliquam lectus. <br/> 5. Vestibulum mattis felis quis ex pharetra luctus.
-                            Etiam luctus sagittis massa, sed iaculis est vehicula ut
+                           <?php echo $postMisi ?>
                         </p>
                     </div>
                     <div class="col-md-6 mb-4 mb-md-0 hover-zoom">

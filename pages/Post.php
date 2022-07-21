@@ -141,7 +141,7 @@
     </div>
 
     <!-- Comment -->
-    <form action="../admin/comment.php?>'" method="POST">
+    <form action="../admin/Comment.php?>'" method="POST">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootdey">
 <div class="col-md-12 bootstrap snippets">
