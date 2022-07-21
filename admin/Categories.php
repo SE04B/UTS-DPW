@@ -167,7 +167,6 @@
 									<th>Category Name</th>
 									<th>Date Added</th>
 									<th>Added By</th>
-									<th>Update</th>
 									<th>Delete</th>
 								</tr>
 								<?php
@@ -184,7 +183,6 @@
 										<td>$cat_name</td>
 										<td>$cat_dateTime</td>
 										<td>$cat_creator</td>
-										<td><input class='btn btn-success' type='button' name='update' value='Edit'></td>
 										<td><a href='Categories.php?delete_attempt=$cat_id&name=$cat_name'><button class='btn btn-danger'>Delete</button></a></td>
 										</tr>
 										";
