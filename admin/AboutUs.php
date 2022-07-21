@@ -1,42 +1,20 @@
 <?php require_once('Include/Sessions.php'); ?>
 <?php require_once('Include/Functions.php'); ?>
-<?php require_once('NewFasilitas.php'); ?>
 <?php ConfirmLogin(); ?>
 <?php
-$sqlCheckFasilitas = "SELECT * FROM cms_fasilitas";
-$checkFasilitas = Query($sqlCheckFasilitas);
+
 	if(isset($_POST['submit'])){
 		$aboutPostContent = mysqli_real_escape_string($con, $_POST['about-post-content']);
 		$visi = mysqli_real_escape_string($con, $_POST['post-visi']);
 		$misi = mysqli_real_escape_string($con, $_POST['post-misi']);
 		$query = "UPDATE cms_aboutus SET about='$aboutPostContent',vision='$visi',mission='$misi' WHERE id=1 ";
-			$exec = Query($query);
+		$exec = Query($query);
 			if ($exec) {
 				// move_uploaded_file($_FILES['post-image']['tmp_name'], $imageDirectory);
 				$_SESSION['successMessage'] = "Post Added Successfully";
 			} else {
 				$_SESSION['errorMessage'] = "Something Went Wrong Please Try Again";
 			}
-	}
-
-
-	if(isset($_POST['fasilitas1simpan'])){
-		$name = mysqli_real_escape_string($con, $_POST['fasilitas1']);
-		// $image =
-		if (mysqli_num_rows($checkFasilitas) > 0){
-			$query = "UPDATE cms_fasilitas SET name='$name' WHERE id=1";
-			$exec = Query($query);
-		} else {
-			$query = "INSERT INTO cms_fasilitas (id,name,image) VALUES (1,'$name','')";
-			$exec = Query($query);
-		}
-	} elseif (isset($_POST['fasilitas1remove'])){
-		if (mysqli_num_rows($checkFasilitas) > 0){
-			$query = "DELETE FROM cms_fasilitas WHERE id=1";
-			$exec = Query($query);
-		} else {
-			
-		}
 	}
 ?>
 
@@ -162,57 +140,6 @@ $checkFasilitas = Query($sqlCheckFasilitas);
 											<!-- <input class="form-control input-md" type="text" name="post-misi" id="post-misi" placeholder="Tuliskan misi di sini"> -->
 											<textarea name="post-misi" id="post-misi" cols="100" rows="5" placeholder="Tuliskan misi di sini"><?php echo $postMisi ?></textarea>
 										</div>
-
-                                        <h3 style="margin-top:1cm;">Fasilitas</h3>
-
-                                        <?php
-										$sqlShow1 = "SELECT *  FROM cms_fasilitas WHERE id=1";
-										$query = Query($sqlShow1);
-										if (mysqli_num_rows($query) > 0){
-											$post = mysqli_fetch_assoc($query);
-											$postFasilitas1 = $post['name'];
-										} else {
-											$postFasilitas1 = "";
-										}
-										?>
-                                        <div class="form-group">
-                                            <label for="cat_name">Nama Fasilitas 1</label>
-											<input class="form-control input-md" type="text" id="fasilitas1" name="fasilitas1" placeholder="Tuliskan nama fasilitas di sini" value="<?php echo $postFasilitas1 ?>">
-                                            <input type="File" name="fasilitasImage1" id="fasilitasImage1" class="form-control">
-                                            <button type="fasilitas1remove" class="btn btn-danger" name="fasilitas1remove" id="fasilitas1remove" style="margin-top: 0.25cm;">Hapus</button>
-											<button type="fasilitas1simpan" class="btn btn-success" id="fasilitas1simpan" name="fasilitas1simpan" style="margin-top: 0.25cm;">Simpan</button>
-                                        </div>
-
-                                        <div style="margin-top:0.5cm;"></div>
-
-                                        <div class="form-group">
-                                            <label for="cat_name">Nama Fasilitas 2</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
-                                            <input type="File" name="post-image" class="form-control">
-                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
-                                        </div>
-
-										<div class="form-group">
-                                            <label for="cat_name">Nama Fasilitas 3</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
-                                            <input type="File" name="post-image" class="form-control">
-                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
-                                        </div>
-
-										<div class="form-group">
-                                            <label for="cat_name">Nama Fasilitas 4</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
-                                            <input type="File" name="post-image" class="form-control">
-                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
-                                        </div>
-
-										<div class="form-group">
-                                            <label for="cat_name">Nama Fasilitas 5</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
-                                            <input type="File" name="post-image" class="form-control">
-                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
-                                        </div>
-
 										<div class="form-group" style="margin-top:1cm;">
 											<input class="form-control btn btn-primary" type="submit" name="submit" id="submit" value="Save">
 									</fieldset>
