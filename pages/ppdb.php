@@ -1,6 +1,7 @@
 <?php
 include('../admin/Include/Sessions.php');
 include('../admin/Include/Functions.php');
+include_once('../admin/PPDBLink.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +47,7 @@ include('../admin/Include/Functions.php');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="ppdb.php">
+                            <a href="<?php echo $link ?>">
                                 <button type="button" class="btn btn-success btn-rounded">
                                         PPDB
                                     </button>
@@ -79,9 +80,12 @@ include('../admin/Include/Functions.php');
         </nav>
     </header>
 
-    <section>
+    <?php
+
+    ?>
+    <!-- <section>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScn-IR1zWlSah7BHELl8nZDZ5okvYSm0tRU0CTDU5O3x_DR5Q/viewform?embedded=true" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </section>
+    </section> -->
 
 
 

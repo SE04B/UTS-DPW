@@ -1,14 +1,34 @@
 <?php require_once('Include/Sessions.php'); ?>
 <?php require_once('Include/Functions.php'); ?>
 <?php ConfirmLogin(); ?>
-
+<?php
+$getData = "SELECT * FROM cms_ppdb";
+$execData = Query($getData);
+	if (isset($_POST['submit'])){
+		$forms = mysqli_real_escape_string($con,$_POST['googleFormsEmbed']);
+		$spreadsheet = mysqli_real_escape_string($con,$_POST['googleSpreadsheetEmbed']);
+		
+		if (mysqli_num_rows($execData) > 0){
+			$query = "UPDATE cms_ppdb SET googleSpreadsheetEmbedLink='$spreadsheet',googleFormsEmbedLink='$forms'";
+			$exec = Query($query);
+			$_SESSION['successMessage'] = "UPDATE Berhasil";
+		} else if (mysqli_num_rows($execData) < 1){
+			$query = "INSERT INTO cms_ppdb (googleSpreadsheetEmbedLink,googleFormsEmbedLink) VALUES ('$forms','$spreadsheet')";
+			$exec = Query($query);
+			$_SESSION['successMessage'] = "INSERT Berhasil";
+		} else {
+			$_SESSION['errorMessage'] = 'Error';
+			Redirect_To('../admin/PPDB.php');
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<title>Categories</title>
+	<title>Data PPDB</title>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
 	<!-- Google Fonts Roboto -->
@@ -80,16 +100,40 @@
 	<!--Main layout-->
 	<main style="margin-top: 58px">
 		<div class="container pt-4">
+			<?php
+				if (mysqli_num_rows($execData) > 0){
+					$post = mysqli_fetch_assoc($execData);
+					$postForms = $post['googleFormsEmbedLink'];
+					$postSpreadsheet = $post['googleSpreadsheetEmbedLink'];
+				} else {
+					$postForms = "Data Kosong !!!";
+					$postSpreadsheet = "Data Kosong !!!";
+				}
+			?>
 			<!-- Section: Main chart -->
 			<section>
-                <div class="page-title"><h1>PPDB</h1></div>
-                <div class="embed-responsive embed-responsive-21by9">
-                    <?php echo Message(); ?>
-                    <?php echo SuccessMessage(); ?>
-                    <iframe style="width:100%;" class="embed-responsive-item" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRrZFDzl_iFzckXiG58YtxXjugDg8nOcuDP2stTb4-k_Wg-CCn6cajtkufwRhDUIbN-ci5j0Y-p94Ck/pubhtml?widget=true&amp;headers=false" allowfullscreen></iframe>
-                </div>
-				<div class="row navbar-inverse" id="footer"></div>
-				<script type="text/javascript" src="jquery.js"></script>
+				<form action="PPDB.php" method="post">
+					<h3>🔗 Link Google Forms</h3>
+					<textarea name="googleFormsEmbed" id="googleFormsEmbed" cols="100" rows="1" required><?php echo $postForms ?></textarea>
+					<br>
+					<br>
+					<h3>🔗 Link embed Google spreadsheets</h3>
+					<textarea name="googleSpreadsheetEmbed" id="googleSpreadsheetEmbed" cols="100" rows="1" required><?php echo $postSpreadsheet ?></textarea>
+					<div style="margin: top 200px;">
+						<input style="width: 100px ;" class="form-control btn btn-primary" type="submit" name="submit" id="submit" value="Save">
+					</div>
+					</form>
+					<br>
+					<br>
+					<br>
+					<div class="page-title"><h1>Data PPDB</h1></div>
+					<div class="embed-responsive embed-responsive-21by9">
+						<?php echo Message(); ?>
+						<?php echo SuccessMessage(); ?>
+						<iframe style="width:100%;" class="embed-responsive-item" src="<?php echo $postSpreadsheet ?>?widget=true&amp;headers=false" allowfullscreen></iframe>
+					</div>
+					<div class="row navbar-inverse" id="footer"></div>
+					<script type="text/javascript" src="jquery.js"></script>
 			</section>
 			<!-- Section: Main chart -->
 		</div>

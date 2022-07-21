@@ -2,18 +2,18 @@
 <?php require_once('Include/Functions.php'); ?>
 <?php ConfirmLogin(); ?>
 <?php
+
 	if(isset($_POST['submit'])){
 		$aboutPostContent = mysqli_real_escape_string($con, $_POST['about-post-content']);
 		$visi = mysqli_real_escape_string($con, $_POST['post-visi']);
 		$misi = mysqli_real_escape_string($con, $_POST['post-misi']);
 		$query = "UPDATE cms_aboutus SET about='$aboutPostContent',vision='$visi',mission='$misi' WHERE id=1 ";
-			$exec = Query($query);
+		$exec = Query($query);
 			if ($exec) {
 				// move_uploaded_file($_FILES['post-image']['tmp_name'], $imageDirectory);
 				$_SESSION['successMessage'] = "Post Added Successfully";
 			} else {
 				$_SESSION['errorMessage'] = "Something Went Wrong Please Try Again";
-
 			}
 	}
 ?>
@@ -102,17 +102,27 @@
 					<div class="page-title"><h1>Manage About Us</h1></div>
 					<?php echo Message(); ?>
 					<?php echo SuccessMessage(); ?>
+					<?php
+					$sqlCheckVisiMisi = "SELECT *  FROM cms_aboutus";
+					$checkVisiMisi = Query($sqlCheckVisiMisi);
+					if ($checkVisiMisi){
+						$post = mysqli_fetch_assoc($checkVisiMisi);
+						$postAboutus = $post['about'];
+						$postVisi = $post['vision'];
+						$postMisi = $post['mission'];
+					}
+					?>
 					<div>
 						<div class="row">
 							<div class="col-md-12 ">
 								<form method="POST" action="AboutUs.php">
 									<fieldset>
 										<div class="form-group" style="margin-top:1cm ;">
-											<label for="cat_name">Tentang Pondok Pesantren Nurul Jadid</label>
+											<label for="cat_name"><strong>Tentang Pondok Pesantren Nurul Jadid</strong></label>
 											<br>
 											<br>
 											<!-- <input class="form-control input-md" type="text" name="about-post-content" id="about-post-content" placeholder="Ceritakan tentang Pesantren Nurul Jadid"> -->
-											<textarea name="about-post-content" id="about-post-content" cols="100" rows="5" placeholder="Ceritakan tentang Pesantren Nurul Jadid "></textarea>
+											<textarea name="about-post-content" id="about-post-content" cols="100" rows="5" placeholder="Ceritakan tentang Pesantren Nurul Jadid "><?php echo $postAboutus ?></textarea>
 										</div>
 
                                         <div class="form-group" style="margin-top:1cm ;">
@@ -120,7 +130,7 @@
 											<br>
 											<br>
 											<!-- <input class="form-control input-md text-area" type="text" name="post-visi" id="post-visi" placeholder="Tuliskan visi di sini"> -->
-											<textarea name="post-visi" id="post-visi" cols="100" rows="5" placeholder="Tuliskan visi di sini"></textarea>
+											<textarea name="post-visi" id="post-visi" cols="100" rows="5" placeholder="Tuliskan visi di sini"><?php echo $postVisi ?></textarea>
 										</div>
 
                                         <div class="form-group" style="margin-top:1cm ;">
@@ -128,30 +138,8 @@
 											<br>
 											<br>
 											<!-- <input class="form-control input-md" type="text" name="post-misi" id="post-misi" placeholder="Tuliskan misi di sini"> -->
-											<textarea name="post-misi" id="post-misi" cols="100" rows="5" placeholder="Tuliskan misi di sini"></textarea>
+											<textarea name="post-misi" id="post-misi" cols="100" rows="5" placeholder="Tuliskan misi di sini"><?php echo $postMisi ?></textarea>
 										</div>
-
-                                        <h3 style="margin-top:1cm;">Fasilitas</h3>
-                                        <button type="button" class="btn btn-success">+ Tambah</button>
-                                        <hr>
-
-                                        <?php ?>
-                                        <div class="form-group">
-                                            <label for="cat_name">Nama Fasilitas 1</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
-                                            <input type="File" name="post-image" class="form-control">
-                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
-                                        </div>
-
-                                        <div style="margin-top:0.5cm;"></div>
-
-                                        <div class="form-group">
-                                            <label for="cat_name">Nama Fasilitas 2</label>
-											<input class="form-control input-md" type="text" name="cat_name" placeholder="Tuliskan nama fasilitas di sini">
-                                            <input type="File" name="post-image" class="form-control">
-                                            <button type="button" class="btn btn-danger" style="margin-top: 0.25cm;">Hapus</button>
-                                        </div>
-
 										<div class="form-group" style="margin-top:1cm;">
 											<input class="form-control btn btn-primary" type="submit" name="submit" id="submit" value="Save">
 									</fieldset>

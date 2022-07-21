@@ -4,6 +4,7 @@
     include_once('Include/Database.php');
     include_once('Include/LoginLogic.php');
     include_once('Include/Security/WAF.php');
+    include_once('../admin/PPDBLink.php');
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="../pages/ppdb.php">
+                        <a href="<?php echo $link ?>">
                             <button type="button" class="btn btn-link px-3 me-2">
                                 PPDB
                             </button>

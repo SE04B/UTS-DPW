@@ -143,8 +143,8 @@
 								<form method="POST" action="ManageAdmin.php">
 									<fieldset>
 										<div class="form-group">
-											<label for="username">Username</label>
-											<input class="form-control input-md" type="text" name="username" placeholder="Username">
+											<label for="username">Email</label>
+											<input class="form-control input-md" type="text" name="username" placeholder="Email">
 										</div>
 										<div class="form-group">
 											<label for="password">Password</label>
@@ -168,7 +168,7 @@
 								<tr>
 									<th>Number</th>
 									<th>Date Added</th>
-									<th>Username</th>
+									<th>Email</th>
 									<th>Added By</th>
 									<th>Action</th>
 								</tr>
