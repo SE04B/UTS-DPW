@@ -1,6 +1,5 @@
 <?php
 require_once('Database.php');
-
 function Redirect_To ($location) {
 	header('location:' . $location);
 	exit;

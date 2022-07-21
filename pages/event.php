@@ -1,6 +1,7 @@
 <?php
 include('../admin/Include/Sessions.php');
 include('../admin/Include/Functions.php');
+include_once('../admin/PPDBLink.php');
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +44,7 @@ include('../admin/Include/Functions.php');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="ppdb.php">
+                            <a href="<?php echo $link ?>">
                                 <button type="button" class="btn btn-link px-3 me-2">
                                         PPDB
                                     </button>

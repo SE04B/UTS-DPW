@@ -18,10 +18,9 @@ $execData = Query($getData);
 			$_SESSION['successMessage'] = "INSERT Berhasil";
 		} else {
 			$_SESSION['errorMessage'] = 'Error';
-			Redirect_To('./PPDB.php');
+			Redirect_To('../admin/PPDB.php');
 		}
 	}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,7 +113,7 @@ $execData = Query($getData);
 			<!-- Section: Main chart -->
 			<section>
 				<form action="PPDB.php" method="post">
-					<h3>🔗 Link embed Google Forms</h3>
+					<h3>🔗 Link Google Forms</h3>
 					<textarea name="googleFormsEmbed" id="googleFormsEmbed" cols="100" rows="1" required><?php echo $postForms ?></textarea>
 					<br>
 					<br>
@@ -131,8 +130,7 @@ $execData = Query($getData);
 					<div class="embed-responsive embed-responsive-21by9">
 						<?php echo Message(); ?>
 						<?php echo SuccessMessage(); ?>
-
-						<iframe style="width:100%;" class="embed-responsive-item" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRrZFDzl_iFzckXiG58YtxXjugDg8nOcuDP2stTb4-k_Wg-CCn6cajtkufwRhDUIbN-ci5j0Y-p94Ck/pubhtml?widget=true&amp;headers=false" allowfullscreen></iframe>
+						<iframe style="width:100%;" class="embed-responsive-item" src="<?php echo $postSpreadsheet ?>?widget=true&amp;headers=false" allowfullscreen></iframe>
 					</div>
 					<div class="row navbar-inverse" id="footer"></div>
 					<script type="text/javascript" src="jquery.js"></script>
