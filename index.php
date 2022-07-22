@@ -181,7 +181,7 @@ include_once('./admin/PPDBLink.php');
                         </figcaption>
                     </div>
                     <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
-                        <img class="img-thumbnail" src="https://dummyimage.com/200x200/000/fff" alt="" />
+                        <img class="img-thumbnail " style="width: 300px; height: 300px; margin-top: 1px; margin-bottom: 55px;" src="/img/takmir.png" alt="" />
                     </div>
                 </div>
             </div>
