@@ -141,7 +141,7 @@ include_once('../admin/PPDBLink.php');
             <div class="row">
                 <div class="col-md-4 mb-4 hover-zoom">
                     <div style="margin-right: 10px;" class="card">
-                        <img src="../img/fasilitas/fasilitas 1.jpg" class="card-img-top" alt="masjid">
+                        <img src="../img/fasilitas/" class="card-img-top" alt="masjid">
                         <div class="card-body">
                             <p class="fw-bold fs-4 card-text text-center">Masjid</p>
                         </div>
@@ -149,17 +149,17 @@ include_once('../admin/PPDBLink.php');
                 </div>
                 <div class="col-md-4 mb-4 hover-zoom">
                     <div style="margin-right: 10px;" class="card">
-                        <img src="../img/fasilitas/fasilitas 2.jpg" class="card-img-top" alt="kamar tidur">
+                        <img src="../img/fasilitas/kamarTidurLaki.jpg" class="card-img-top" alt="kamar tidur">
                         <div class="card-body">
-                            <p class="fw-bold fs-4 card-text text-center">Kamar tidur</p>
+                            <p class="fw-bold fs-4 card-text text-center">Kamar tidur Laki-laki</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4 hover-zoom">
                     <div style="margin-right: 10px;" class="card">
-                        <img src="../img/fasilitas/fasilitas 3.jpg" class="card-img-top" alt="kamar mandi">
+                        <img src="../img/fasilitas/ruangMasak.jpg" class="card-img-top" alt="kamar mandi">
                         <div class="card-body">
-                            <p class="fw-bold fs-4 card-text text-center">Kamar mandi</p>
+                            <p class="fw-bold fs-4 card-text text-center">Dapur Santri</p>
                         </div>
                     </div>
                 </div>
@@ -167,7 +167,7 @@ include_once('../admin/PPDBLink.php');
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4 hover-zoom">
                     <div style="margin-right: 10px;" class="card">
-                        <img src="../img/fasilitas/fasilitas 4.jpg" class="card-img-top" alt="ruang kelas">
+                        <img src="../img/fasilitas/ruangBelajar.jpg" class="card-img-top" alt="ruang kelas">
                         <div class="card-body">
                             <p class="fw-bold fs-4 card-text text-center">Ruang kelas</p>
                         </div>
@@ -175,9 +175,9 @@ include_once('../admin/PPDBLink.php');
                 </div>
                 <div class="col-md-4 mb-4 hover-zoom">
                     <div style="margin-right: 10px;" class="card">
-                        <img src="../img/fasilitas/fasilitas 5.jpg" class="card-img-top" alt="kantin">
+                        <img src="../img/fasilitas/guruPelajar.jpg" class="card-img-top" alt="kantin">
                         <div class="card-body">
-                            <p class="fw-bold fs-4 card-text text-center">Kantin</p>
+                            <p class="fw-bold fs-4 card-text text-center">Guru Belajar</p>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@ include_once('../admin/PPDBLink.php');
     <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="pages/ppdb.php" class="nav-link px-2 text-muted">PPDB</a></li>
+                <li class="nav-item"><a href="<?php echo $link ?>" class="nav-link px-2 text-muted">PPDB</a></li>
                 <li class="nav-item"><a href="pages/blog.php" class="nav-link px-2 text-muted">Berita</a></li>
                 <li class="nav-item"><a href="aboutus.php" class="nav-link px-2 text-muted">Tentang Kami</a></li>
             </ul>

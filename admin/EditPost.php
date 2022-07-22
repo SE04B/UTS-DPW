@@ -97,32 +97,35 @@
 
 	<!-- Sidebar -->
 	<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-		<div class="position-sticky">
-			<div class="list-group list-group-flush mx-3 mt-4">
-				<a href="News.php" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
-				<i class="fas fa-tachometer-alt fa-fw me-3"></i><span>News</span></a>
+			<div class="position-sticky">
+				<div class="list-group list-group-flush mx-3 mt-4">
+					<a href="News.php" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+					<i class="fas fa-tachometer-alt fa-fw me-3"></i><span>News</span></a>
 
-				<a href="PPDB.php" class="list-group-item list-group-item-action py-2 ripple">
-				<i class="fas fa-pen fa-fw me-3"></i><span>PPBD</span></a>
-				
-				<a href="NewPost.php" class="list-group-item list-group-item-action py-2 ripple">
-				<i class="fas fa-chart-area fa-fw me-3"></i><span>New Post </span></a>
+                    <a href="PPDB.php" class="list-group-item list-group-item-action py-2 ripple">
+					<i class="fas fa-pen fa-fw me-3"></i><span>PPBD</span></a>
 
-				<a href="Admin.php" class="list-group-item list-group-item-action py-2 ripple">
-				<i class="fas fa-lock fa-fw me-3"></i><span>Manage Admin</span></a>
-				
-				<a href="Categories.php" class="list-group-item list-group-item-action py-2 ripple">
-				<i class="fas fa-chart-line fa-fw me-3"></i><span>Categories</span></a>
-				
-				<a href="Comments.php" class="list-group-item list-group-item-action py-2 ripple">
-				<i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span></a>
+					<a href="NewPost.php" class="list-group-item list-group-item-action py-2 ripple">
+					<i class="fas fa-chart-area fa-fw me-3"></i><span>New Post </span></a>
 
-				<a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple">
-				<i class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
+					<a href="ManageAdmin.php" class="list-group-item list-group-item-action py-2 ripple">
+					<i class="fas fa-lock fa-fw me-3"></i><span>Manage Admin</span></a>
+
+					<a href="Categories.php" class="list-group-item list-group-item-action py-2 ripple">
+					<i class="fas fa-chart-line fa-fw me-3"></i><span>Categories</span></a>
+
+					<a href="Comments.php" class="list-group-item list-group-item-action py-2 ripple">
+					<i class="fas fa-chart-pie fa-fw me-3"></i><span>Comments</span></a>
+
+                    <a href="AboutUs.php" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fas fa-user fa-fw me-3"></i><span>About Us</span></a>
+
+					<a href="Logout.php" class="list-group-item list-group-item-action py-2 ripple">
+					<i class="fas fa-chart-bar fa-fw me-3"></i><span>Logout</span></a>
+				</div>
 			</div>
-		</div>
-    </nav>
-    <!-- Sidebar -->
+		</nav>
+		<!-- Sidebar -->
 
   	<!--Main layout-->
   	<main style="margin-top: 58px">
