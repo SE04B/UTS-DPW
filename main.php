@@ -60,7 +60,7 @@ if ( isset($_POST['submit'])) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/ppdb.php">
+                                <a href="pages/<?php echo $link ?>">
                                     <button type="button" class="btn btn-link px-3 me-2">
                                         PPDB
                                     </button>
@@ -144,7 +144,7 @@ if ( isset($_POST['submit'])) {
                                         <span class="text-success">Nurul Jadid Al - Mas'udiyah</span>
                                         <p><cite style="font-style: italic; font-size: 20px;">"Pribadi saleh, mandiri, berilmu, berjuang dan berbakti kepada agama, masyarakat dan bangsa"</cite></p>
                                     </h1>
-                                    <a class="btn btn-success btn-lg py-3 px-5 mb-2 me-2" href="pages/ppdb.php" role="button" aria-controls="#picker-editor" draggable="false">Info PPDB</a>
+                                    <a class="btn btn-success btn-lg py-3 px-5 mb-2 me-2" href="pages/<?php echo $link ?>" role="button" aria-controls="#picker-editor" draggable="false">Info PPDB</a>
                                     <!-- <a class="btn btn-link btn-lg py-3 px-5 text-danger mb-2 me-2" data-ripple-color="danger" href="#berita1" role="button" aria-controls="#picker-editor" draggable="false">Baca selengkapnya</a> -->
                                 </div>
                                 <!-- Card Qoute -->
@@ -413,7 +413,7 @@ if ( isset($_POST['submit'])) {
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="pages/ppdb.php" class="nav-link px-2 text-muted">PPDB</a></li>
+                <li class="nav-item"><a href="<?php echo $link ?>" class="nav-link px-2 text-muted">PPDB</a></li>
                 <li class="nav-item"><a href="pages/blog.php" class="nav-link px-2 text-muted">Berita</a></li>
                 <li class="nav-item"><a href="pages/aboutus.php" class="nav-link px-2 text-muted">Tentang Kami</a></li>
             </ul>
